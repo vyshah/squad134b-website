@@ -1,8 +1,8 @@
-body {
-  padding: 0; /* Gets rid of the automatic padding */
-  margin: 0;  /*  on HTML documents */
+body
+{
+  background-color: #f7f7f7;
   font-family: "Montserrat";
-  font-size: 12px;
+  width: 100%;
 }
 
 form {
@@ -138,12 +138,13 @@ div.title {
     bottom: 0;
     right: 0;
     font-family: "Montserrat";
-    width: 100%;
+    width: @media;
     border: 0px;
     text-align:center;
   }
 
 .title-img {
+  position: relative;
   width: 100%;
 }
 
@@ -157,14 +158,6 @@ div.menu {
     border: 0px;
     text-align:center;
   }
-
-body
-{
-  padding: 50px;
-  background-color: #f7f7f7;
-  font-family: "Montserrat";
-  width: 100%;
-}
 
 .animate
 {
