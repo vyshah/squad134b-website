@@ -138,7 +138,7 @@ div.title {
     bottom: 0;
     right: 0;
     font-family: "Montserrat";
-    width: @media;
+    width: 100%;
     border: 0px;
     text-align:center;
   }
@@ -154,7 +154,7 @@ div.menu {
     bottom: 0;
     right: 0;
     font-family: "Montserrat";
-    width: @media;
+    width: 100%;
     border: 0px;
     text-align:center;
   }
