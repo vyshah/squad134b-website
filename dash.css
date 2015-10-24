@@ -7,7 +7,8 @@ div.title {
     width: @media;
     border: 0px;
     text-align:center;
-	}
+}
+
 
  #progressbar {font-size: 220%;}
 
@@ -20,7 +21,7 @@ div.menu {
     width: @media;
     border: 0px;
     text-align:center;
-	}
+}
 
 body
 {
@@ -68,6 +69,11 @@ body
 }
 
 .icon {
+	height: 19%;
+	width: 19%;
+}
+
+.rate {
 	height: 19%;
 	width: 19%;
 }
