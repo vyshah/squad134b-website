@@ -1,0 +1,233 @@
+body {
+	padding: 0; /* Gets rid of the automatic padding */
+	margin: 0;	/*	on HTML documents */
+	font-family: "Montserrat";
+	font-size: 12px;
+}
+
+form {
+  background: none;
+  margin: 20px auto 0;
+  padding: 10px;
+  width: 280px;
+  font-family: "Montserrat";
+}
+
+input {
+  display: block;
+  font-size: 14px;
+  width:100%;
+  margin: 10px auto;
+  padding: 10px 8px 10px 8px;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0, .55), 0px 1px 1px rgba(255,255,255,.5);
+  border: 1px solid #666;
+}
+
+input {
+  opacity: 0.5;
+}
+
+#navigation {
+  position: fixed;
+  top: 0;
+  left:0;
+  width: 100%;
+  color: #ffffff;
+  height: 35px;
+  text-align: center;
+  padding-top: 15px;
+  /* Adds shadow to the bottom of the bar */
+  -webkit-box-shadow: 0px 0px 8px 0px #000000;
+  -moz-box-shadow: 0px 0px 8px 0px #000000;
+  /* Adds the transparent background */
+  background-color: rgba(1, 1, 1, 0.8);
+  color: rgba(1, 1, 1, 0.8);
+}
+
+#logo {
+  position: fixed;
+  top: 0px;
+  left:0px;
+  width: 100%;
+}
+
+#navigation a {
+	font-size: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: white;
+	text-decoration: none;
+}
+
+#navigation img {
+	padding-left: 15px;
+	padding-right: 15px;
+	position: fixed;
+	top: 5px;
+	left: 5px;
+}
+
+#navigation a:hover {
+	color: grey;
+}
+
+/* This just adds some style to the placeholder text */
+
+#content {
+	width: 600px;
+	padding-top: 70px;
+	padding-bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#content img {
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+
+#habitname {
+	position: center;
+
+}
+#icons {
+	position: center;
+
+}
+
+#dropzone {
+  position: relative;
+  border: 5px solid #000;
+  border-radius: 50%;
+  color: black;
+  font: bold 24px/200px "Montserrat";
+  height: 200px;
+  margin: 30px auto;
+  text-align: center;
+  width: 200px;
+}
+
+dropzone.hover {
+  border: 5px solid #FE5;
+  color: #FE5;
+}
+
+
+#dropzone div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#dropzone [type="file"] {
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+div.title {
+    padding: 50px;
+    position: center;
+    bottom: 0;
+    right: 0;
+    font-family: "Montserrat";
+    width: @media;
+    border: 0px;
+    text-align:center;
+	}
+
+div.menu {
+    padding: 50px;
+    position: center;
+    bottom: 0;
+    right: 0;
+    font-family: "Montserrat";
+    width: @media;
+    border: 0px;
+    text-align:center;
+	}
+
+body
+{
+	padding: 50px;
+	background-color: #f7f7f7;
+	font-family: "Montserrat";
+}
+
+.animate
+{
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+}
+
+.action-button
+{
+	position: bottom;
+	padding: 10px 40px;
+  	margin: 0px 10px 10px 0px;
+  	float: center;
+	border-radius: 10px;
+	font-family: "Montserrat";
+	font-size: 25px;
+	color: #FFF;
+	text-decoration: none;	
+}
+
+.circle-button
+{
+  width: 72px;
+  height: 72px;
+  line-height: 72px;
+  display: block;
+  position: relative;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px solid #444;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  z-index: 10;
+  color: #333;
+}
+
+#dropzone {
+  position: relative;
+  border: 5px solid #000;
+  border-radius: 50%;
+  color: black;
+  font: bold 24px/200px "Montserrat";
+  height: 200px;
+  margin: 30px auto;
+  text-align: center;
+  width: 200px;
+}
+
+.xs
+{
+	padding: 5px 5px;
+	margin: 0px 0px 0px 0px;
+}
+
+.grey
+{
+	background-color: #8d8d8d;
+	border-bottom: 5px solid #777777;
+	text-shadow: 0px -2px #777777;
+}
+
+.action-button:active
+{
+	transform: translate(0px,5px);
+  	w-webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid;
+}
+
