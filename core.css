@@ -1,14 +1,8 @@
 body
 {
-
   background-color: #f7f7f7;
   font-family: "Montserrat";
-  width: @media;
- /*width:100%;*/
-
-/* needed this padding*/
-  padding: 50px;
-
+  width: 100%;
 
 }
 
@@ -145,15 +139,10 @@ div.title {
     bottom: 0;
     right: 0;
     font-family: "Montserrat";
-   /*width: 100%;*/
-   width:@media;
-
-
+    width: 100%;
     border: 0px;
     text-align:center;
-
   }
-
 
 div.menu {
     margin-top: 50px;
@@ -161,16 +150,10 @@ div.menu {
     bottom: 0;
     right: 0;
     font-family: "Montserrat";
-    /*width: 100%;*/
-    width: @media;
-
-
+    width: 100%;
     border: 0px;
     text-align:center;
-
   }
-
-
 
 .animate
 {
