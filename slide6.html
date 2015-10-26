@@ -1,62 +1,116 @@
 <!DOCTYPE html>
 	<head>
-				<!-- Meta tag for viewport -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="dash.css">
 		<link href='https://fonts.googleapis.com/css?family=Montserrat|Open+Sans' rel='stylesheet' type='text/css'>
 	</head>
 		<body>
-			<div class="row1" align="center">
-					<div align="center">
-						<h2>Spend Less $$$$</h2>
-						<h1>85%</h1>
-						<img class="icon" src="money-icon.png" alt="money-icon.png">
+
+			<!--- ROW 1 ---------------------------------------------------------------------------------------------- -->
+										<div id= "frequencycolumn" align="right">
+						<a href="#" class="circle-button-freq xs"> 1 </a> 
+						<a href="#" class="circle-button-freq xs"> 2 </a> 
+						<a href="#" class="circle-button-freq xs"> 3 </a> 
 					</div>
-					<br>
-					<div align="center">
-						<!--  Meter tag is not supported by IE8  -->
-						Progress: <progress id="progressbar" max="100" value="85"> </progress>
-						<br>
-						<pre><p style="font-family: Montserrat;">   10 in a row!             Best = 20 </p></pre>
-					</div>
-					
-			</div>
-			<hr>
-			<br>
-				<p></p>
-			<div class="row2" align="center">
-					<h2>Sleep 8 Hours</h2>
-					<div class="title" align="center">
-				     <img class="icon" src="bed-icon.png" alt="bed-icon.png">
-				     <img class="rate" src="thumbup.png" alt="Thumbs Up">
-				     <img class="rate" src="thumbdown.png" alt="Thumbs Down">
-			       </div>
-					<br>
-					<br>
-			</div>
-			<hr>
-			<br>
-				<p></p>
-		    <div class="row3" align="center">
-					<h2>Don't Bite Your Nails!</h2>
-					<div class="title" align="center">
-				     <img class="rate" src="thumbup.png" alt="Thumbs Up">
-				     <img class="rate" src="thumbdown.png" alt="Thumbs Down">
-			       </div>
-					<br>
-					<br>
-					
-			</div>
+			<div id="wrapper">
+					<h1>Spend Less $$$$</h1>
+				    <div id="leftcolumn">
+							<img src="money-icon.png" alt="money-icon.png" width="40%"> 
+				    </div>
+				    <div id="rightcolumn" class="slide">
+	   						<div id="original">
+	   							<input id="one" name="thumbs" type="checkbox"/>
+	   							<label for="one" class="box"></label>
+	   							<label for="one" class="slider">
+		   							<!--  Meter tag is not supported by IE8  -->
+		   							<h1>85%</h1>
+		   							<img src="trophy-icon.png" width="20%"><br>
+									<progress id="progressbar" max="100" value="85"> </progress>
+									<br>
+									<p style="font-family: Montserrat;">
+									10 in a row! Best = 20 
+									</p>
+								</label>
+						     	<img src="thumbdown.png" alt="Thumbs Down" width="20%">
+						     </div>
+				    </div>
+				</div>
 				<br>
-				<div style="height: 1px; background-color: black; text-align: center">
-  					<span style="background-color:#f7f7f7;position: relative; top: -0.5em; padding: 30px">
-    					keep your habits in line
-  					</span>
+				<br>
+				<hr>
+				<!--- ROW 2 ---------------------------------------------------------------------------------------------- -->
+											<div id= "frequencycolumn" align="right">
+						<a href="#" class="circle-button-freq xs"> 1 </a> 
+						<a href="#" class="circle-button-freq xs"> 2 </a> 
+						<a href="#" class="circle-button-freq xs"> 3 </a> 
+					</div>
+
+			<div id="wrapper">
+					<h1>Sleep 8 Hours</h1>
+				    <div id="leftcolumn">
+							<img src="bed-icon.png" alt="Bed" width="40%"> 
+				    </div>
+				    <div id="rightcolumn" class="slide">
+	   						<div id="original">
+	   							<input id="one" name="thumbs" type="checkbox"/>
+	   							<label for="one" class="box"></label>
+	   							<label for="one" class="slider">
+		   							<!--  Meter tag is not supported by IE8  -->
+		   							<h2>85%</h2>
+									Progress: <progress id="progressbar" max="100" value="85"> </progress>
+									<br>
+									<p style="font-family: Montserrat;">
+									10 in a row! Best = 20 
+									</p>
+								</label>
+						     	<img src="thumbdown.png" alt="Thumbs Down" width="20%">
+						     </div>
+				    </div>
 				</div>
-				<p></p>
-		  		<div class ="menu" align="center" padding="30px">
-		  			<a href="addhabit.html" class="action-button shadow animate grey"><img src="add-icon.png" width="30px"> add a habit</a>
+				<br>
+				<br>
+				<hr>
+
+<!--- ROW 3 ---------------------------------------------------------------------------------------------- -->
+
+											<div id= "frequencycolumn" align="right">
+						<a href="#" class="circle-button-freq xs"> 1 </a> 
+						<a href="#" class="circle-button-freq xs"> 2 </a> 
+						<a href="#" class="circle-button-freq xs"> 3 </a> 
+					</div>
+
+			<div id="wrapper">
+					<h1>Don't bite your nails</h1>
+				    <div id="leftcolumn">
+							<img src="cancel-icon.png" alt="Bed" width="40%"> 
+				    </div>
+				    <div id="rightcolumn" class="slide">
+	   						<div id="original">
+	   							<input id="one" name="thumbs" type="checkbox"/>
+	   							<label for="one" class="box"></label>
+	   							<label for="one" class="slider">
+		   							<!--  Meter tag is not supported by IE8  -->
+		   							<h2>85%</h2>
+									Progress: <progress id="progressbar" max="100" value="85"> </progress>
+									<br>
+									<p style="font-family: Montserrat;">
+									10 in a row! Best = 20 
+									</p>
+								</label>
+						     	<img src="thumbdown.png" alt="Thumbs Down" width="20%">
+						     </div>
+				    </div>
 				</div>
-		</body>
-	<footer>
-	</footer>
+				<br>
+					<br>
+					<div style="height: 1px; background-color: black; text-align: center">
+	  					<span style="background-color:#f7f7f7;position: relative; top: -0.5em; padding: 30px">
+	    					keep your habits in line
+	  					</span>
+					</div>
+					<p></p>
+			  		<div class ="menu" align="center" padding="30px">
+			  			<a href="addhabit.html" class="action-button shadow animate grey">+ add a habit</a>
+					</div>
+			<body>
+		<footer>
+		</footer>
