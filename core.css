@@ -1,8 +1,8 @@
-body
-{
-  background-color: #f7f7f7;
-  font-family: "Montserrat";
-  width: 100%;
+body {
+	padding: 0; /* Gets rid of the automatic padding */
+	margin: 0;	/*	on HTML documents */
+	font-family: "Montserrat";
+	font-size: 12px;
 }
 
 form {
@@ -53,46 +53,46 @@ input {
 }
 
 #navigation a {
-  font-size: 20px;
-  padding-left: 15px;
-  padding-right: 15px;
-  color: white;
-  text-decoration: none;
+	font-size: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: white;
+	text-decoration: none;
 }
 
 #navigation img {
-  padding-left: 15px;
-  padding-right: 15px;
-  position: fixed;
-  top: 5px;
-  left: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	position: fixed;
+	top: 5px;
+	left: 5px;
 }
 
 #navigation a:hover {
-  color: grey;
+	color: grey;
 }
 
 /* This just adds some style to the placeholder text */
 
 #content {
-  width: 600px;
-  padding-top: 70px;
-  padding-bottom: 30px;
-  margin-left: auto;
-  margin-right: auto;
+	width: 600px;
+	padding-top: 70px;
+	padding-bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #content img {
-  padding-top: 20px;
-  padding-bottom: 30px;
+	padding-top: 20px;
+	padding-bottom: 30px;
 }
 
 #habitname {
-  position: center;
+	position: center;
 
 }
 #icons {
-  position: center;
+	position: center;
 
 }
 
@@ -133,15 +133,19 @@ dropzone.hover {
 }
 
 div.title {
-    margin-top: 50px;
+    padding: 50px;
     position: center;
     bottom: 0;
     right: 0;
     font-family: "Montserrat";
-    width: 100%;
+    width: @media;
     border: 0px;
     text-align:center;
-  }
+	}
+
+.title-img {
+  width: 100%;
+}
 
 div.menu {
     margin-top: 50px;
@@ -149,28 +153,35 @@ div.menu {
     bottom: 0;
     right: 0;
     font-family: "Montserrat";
-    width: 100%;
+    width: @media;
     border: 0px;
     text-align:center;
-  }
+	}
+
+body
+{
+	padding: 50px;
+	background-color: #f7f7f7;
+	font-family: "Montserrat";
+}
 
 .animate
 {
-  transition: all 0.1s;
-  -webkit-transition: all 0.1s;
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
 }
 
 .action-button
 {
-  position: bottom;
-  padding: 10px 40px;
-    margin: 0px 10px 10px 0px;
-    float: center;
-  border-radius: 10px;
-  font-family: "Montserrat";
-  font-size: 25px;
-  color: #FFF;
-  text-decoration: none;  
+	position: bottom;
+	padding: 10px 40px;
+  	margin: 0px 10px 10px 0px;
+  	float: center;
+	border-radius: 10px;
+	font-family: "Montserrat";
+	font-size: 25px;
+	color: #FFF;
+	text-decoration: none;	
 }
 
 .circle-button
@@ -206,55 +217,21 @@ div.menu {
 
 .xs
 {
-  padding: 5px 5px;
-  margin: 0px 0px 0px 0px;
+	padding: 5px 5px;
+	margin: 0px 0px 0px 0px;
 }
 
 .grey
 {
-  background-color: #8d8d8d;
-  border-bottom: 5px solid #777777;
-  text-shadow: 0px -2px #777777;
+	background-color: #8d8d8d;
+	border-bottom: 5px solid #777777;
+	text-shadow: 0px -2px #777777;
 }
 
 .action-button:active
 {
-  transform: translate(0px,5px);
-    w-webkit-transform: translate(0px,5px);
-  border-bottom: 1px solid;
+	transform: translate(0px,5px);
+  	w-webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid;
 }
 
-/* For mobile phones: */
-[class*="col-"] {
-    width: 100%;
-}
-@media only screen and (min-width: 600px) {
-    /* For tablets: */
-    .col-m-1 {width: 8.33%;}
-    .col-m-2 {width: 16.66%;}
-    .col-m-3 {width: 25%;}
-    .col-m-4 {width: 33.33%;}
-    .col-m-5 {width: 41.66%;}
-    .col-m-6 {width: 50%;}
-    .col-m-7 {width: 58.33%;}
-    .col-m-8 {width: 66.66%;}
-    .col-m-9 {width: 75%;}
-    .col-m-10 {width: 83.33%;}
-    .col-m-11 {width: 91.66%;}
-    .col-m-12 {width: 100%;}
-}
-@media only screen and (min-width: 768px) {
-    /* For desktop: */
-    .col-1 {width: 8.33%;}
-    .col-2 {width: 16.66%;}
-    .col-3 {width: 25%;}
-    .col-4 {width: 33.33%;}
-    .col-5 {width: 41.66%;}
-    .col-6 {width: 50%;}
-    .col-7 {width: 58.33%;}
-    .col-8 {width: 66.66%;}
-    .col-9 {width: 75%;}
-    .col-10 {width: 83.33%;}
-    .col-11 {width: 91.66%;}
-    .col-12 {width: 100%;}
-}
