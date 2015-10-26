@@ -193,4 +193,10 @@ input[type=checkbox] + label
       text-align: center;
         margin: 5px auto;
 }
-
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .title {width: 8.33%;}
+    .menu {width: 16.66%;}
+    .body {width: 100%;}
+    .slide {width: 100%;}
+}
