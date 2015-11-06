@@ -62,3 +62,13 @@ body{
     section{width:500px;margin: 0 auto;}
     .message{right:60px;bottom:80px;}
 }
+.title {
+    text-align: left;
+    display: inline;
+    vertical-align: top;
+    width: 300px;
+}
+.title h1{
+    text-align: left;
+    display: inline;
+}

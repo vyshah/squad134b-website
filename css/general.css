@@ -1,0 +1,43 @@
+.logout{
+	position: relative;
+	margin: 0 auto;
+  top: 15%;
+  width: 100px;
+}
+
+p#temp{
+	text-align:center;
+	
+}
+@media (max-width: 499px) {
+	.logout {
+	  	width: auto;
+	  	margin: 0 20px;
+	 }
+ }
+	.logout .logoutButton {
+	 -webkit-appearance:none;
+		width: 75px;
+		display: inline-block;
+		margin-left: 85%;
+		padding: 15px;
+		text-align: center;
+		background:none;
+		background-color: #214864;
+	  border:none;
+	  color:white;
+	  -webkit-border-radius: 5px; /*For Safari, etc. */
+	  -moz-border-radius: 5px; /* For Mozilla, etc. */
+	  border-radius: 5px; /* CSS3 Feature */
+	  opacity: 1.0;
+	  -webkit-box-sizing: border-box;
+	  -moz-box-sizing: border-box;
+	  box-sizing: border-box;
+	  font-size: 15px;
+	}
+
+
+	.logout .logoutButton:hover {
+		opacity: 0.75;
+		cursor: pointer;
+	}

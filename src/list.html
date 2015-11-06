@@ -4,11 +4,17 @@
     <title>Virtue / Vice</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" type="text/css" href="../css/list.css">
 </head>
 <body>
     <section>
-        <h1>Habit List</h1>
+        <div class="title">
+            <h1>Habit List</h1>
+        </div>
+            <div class="logout" style="width: 90%; height: 10%;">
+                    <input class="logoutButton" type="button" value="Logout" onclick="logoutClick()">
+            </div>
         <ul id="habit-list">
             <li>
                 <ul class="habit-info">
@@ -112,5 +118,6 @@
             parent.removeChild(child);
         }
     </script>
+    <script src="../js/logout.js"></script>
 </body>
 </html>
