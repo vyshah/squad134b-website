@@ -4,12 +4,18 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Add a habit</title>
+		<link rel="stylesheet" href="../css/general.css">
 		<link rel="stylesheet" href="../css/forms.css">
 	</head>
 	<body>
 
 		<div class="forms">
-			<h2>Add A Habit</h2>
+			<div class="header">
+				<h2>Add A Habit</h2>
+				<div class="logout" style="margin-left: 35.5%">
+					<input class="logoutButton" type="button" value="Logout" onclick="logoutClick()">
+				</div>
+			</div>
 			<form>
 				<p><label><span id="title_text">Habit Title</span></label></p>
 				<p><input id="title" type="text" name="fullname" placeholder="Exercise 30 minutes"></p>
@@ -53,5 +59,6 @@
 				image.style.border = "5px solid #42A5F5";
 			}
 		</script>
+		<script src="../js/logout.js"></script>
 	</body>
 </html>
