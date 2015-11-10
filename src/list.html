@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" type="text/css" href="../css/list.css">
+    <script>
+        function clickCounter() {
+            if(typeof(Storage) !== "undefined") {
+                if (localStorage.clickcount) {
+                    localStorage.clickcount = Number(localStorage.clickcount)+1;
+                } else {
+                    localStorage.clickcount = 1;
+                }
+                document.getElementById("result").innerHTML = "Completed <b>" + localStorage.clickcount + "/1</b> for today!";
+            } else {
+                document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+            }
+        }
+    </script>
 </head>
 <body>
     <section>
@@ -22,15 +36,18 @@
                 <div class="message">
                     <span class="message-total">
                         <strong>2</strong> days in a row! Best Record: <strong>5</strong><br>
+                        <p></p>
                         <svg height="25" width="150">
                             <line x1="0" y1="0" x2="60" y2="0" style="stroke:rgba(65, 131, 215, 0.8);stroke-width:25" />
                             <line x1="60" y1="0" x2="150" y2="0" style="stroke:rgba(171,171,171,0.6);stroke-width:25" />
                         </svg>
+                    <div id="result"></div>
                     </span><br>
+
                     <span class="message-today">Completed <strong>1/1</strong> for today!</span>
                 </div>
                 <div class="habit-op">
-                    <button type="button" class="op op-done" onclick="showMsg(this);" title="done">
+                    <button type="button" class="op op-done" onclick="clickCounter()" title="done">
                         <img src="../img/done.svg" alt="Done">
                     </button>
                     <button type="button" class="op op-edit" onclick="location.href='edit.html'" title="edit habit">
