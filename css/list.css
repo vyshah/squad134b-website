@@ -1,3 +1,7 @@
+@import "compass/css3";
+
+@import "compass/css3/shared";
+
 /* basic structure & layout */
 html{height: 100%;}
 h1 {
@@ -75,3 +79,148 @@ body{
     display: inline-block;
     width: 300px;
 }
+
+.circle-plus {height:6em; width:6em; font-size:1em /*Will change icon size*/;}
+.circle-plus .circle {position: relative; width: 4.5em; height: 4.5em; border-radius: 100%; border: solid .8em #DFDAD7;}
+.circle-plus .circle .horizontal {position: absolute; background-color: #DFDAD7; width: 2.4em; height: .7em; top: 1.9em; left: 1.05em;}
+.circle-plus .circle .vertical {position: absolute; background-color: #DFDAD7; width: .7em; height: 2.4em; top: 1.05em; left: 1.9em;}
+
+
+.button {
+  margin: 40px auto;
+  font-size: 72px;
+  font-family: 'Yanone Kaffeesatz', Arial, sans-serif;
+  text-decoration: none;
+  text-shadow: 1px 1px 0px #fff;
+  font-weight: 400;
+  color: #666;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  padding: 20px 70px 30px;
+  position: relative;
+  top: 50px;
+  background: #eee;
+  width: 300px;
+  display: block;
+  text-align: center;
+  box-shadow: 1px 1px 1px #ffffff;
+  -moz-box-shadow: 1px 1px 1px #ffffff;
+  -webkit-box-shadow: 1px 1px 1px #ffffff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.button:hover {
+  color: #333;
+  background: #eeffff;
+  -moz-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.modalbg {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 99999;
+  -moz-transition: all 2s ease-out;
+  -webkit-transition: all 2s ease-out;
+  -o-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+  -webkit-transition-delay: 0.2s;
+  -moz-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  -transition-delay: 0.2s;
+  display: block;
+  pointer-events: none;
+}
+.modalbg .dialog {
+  width: 400px;
+  position: relative;
+  top: -1000px;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #ffffff;
+  background: -moz-linear-gradient(#ffffff, #cccccc);
+  background: -webkit-linear-gradient(#ffffff, #cccccc);
+  background: -o-linear-gradient(#ffffff, #cccccc);
+  box-shadow: 0 0 10px #000000;
+  -moz-box-shadow: 0 0 10px #000000;
+  -webkit-box-shadow: 0 0 10px #000000;
+}
+.modalbg .dialog .ie7 {
+  filter: progid:DXImageTransform.Microsoft.Shadow(color='#000000', Direction=135, Strength=3);
+}
+.modalbg:target {
+  display: block;
+  pointer-events: auto;
+  background: rgba(4, 10, 30, 0.8);
+  -moz-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.modalbg:target .dialog {
+  top: -20px;
+  -moz-transition: all 0.8s ease-out;
+  -webkit-transition: all 0.8s ease-out;
+  -o-transition: all 0.8s ease-out;
+  transition: all 0.8s ease-out;
+  -webkit-transition-delay: 0.4s;
+  -moz-transition-delay: 0.4s;
+  -o-transition-delay: 0.4s;
+  -transition-delay: 0.4s;
+}
+.close {
+  background: #606061;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #000000;
+  -moz-box-shadow: 0 0 10px #000000;
+  -webkit-box-shadow: 0 0 10px #000000;
+  -moz-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  -webkit-transition-delay: 0.2s;
+  -moz-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  -transition-delay: 0.2s;
+}
+.close .ie7 {
+  filter: progid:DXImageTransform.Microsoft.Shadow(color='#000000', Direction=135, Strength=3);
+}
+.close:hover {
+  background: #00d9ff;
+  -moz-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
