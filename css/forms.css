@@ -84,22 +84,28 @@ img.icon{
   p{
 	color:#6c6c6c;
 	font-size: small;
-	}	
-  
+	}
 }
 
-h2{
-	text-align:center;
-	background-color: #bdbdbd;
-	padding-top: 10px;
-	padding-bottom: 10px;
+h2 {
+	color:#888;
+	text-align: left;
+	display: inline-block;
+	margin-left: 6px;
+	vertical-align: bottom;
+	margin-top: 0;
+	margin-bottom: 5px;
 	border-top-right-radius: 20px;
 	border-top-left-radius: 20px;
-
 	color:white;
 	text-shadow: 0px 0px 0px black;
+	padding-left: 16px;
 }
 
+.header {
+	margin-top: 3px;	
+	background-color: #bdbdbd;
+}
 
 
 img.icon:hover{

@@ -1,6 +1,13 @@
 /* basic structure & layout */
 html{height: 100%;}
-h1{color:#888;text-align: center;}
+h1 {
+    color:#888;
+    text-align: left;
+    display: inline-block;
+    margin-left: 6px;
+    vertical-align: top;
+    margin-bottom: 0;
+}
 body{
     height:100%;   
     background: -webkit-linear-gradient(left top, #BBDEFB, #B0C4DE) fixed; /* For Safari 5.1 to 6.0 */
@@ -62,13 +69,9 @@ body{
     section{width:500px;margin: 0 auto;}
     .message{right:60px;bottom:80px;}
 }
+
 .title {
     text-align: left;
-    display: inline;
-    vertical-align: top;
+    display: inline-block;
     width: 300px;
-}
-.title h1{
-    text-align: left;
-    display: inline;
 }
