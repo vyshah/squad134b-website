@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" type="text/css" href="../css/list.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    </head>
     <script>
         function clickCounter() {
             if(typeof(Storage) !== "undefined") {
@@ -20,6 +22,7 @@
             }
         }
     </script>
+
 </head>
 <body>
     <section>
@@ -53,10 +56,21 @@
                     <button type="button" class="op op-edit" onclick="location.href='edit.html'" title="edit habit">
                         <img src="../img/edit.svg" alt="Edit">
                     </button>
-                    <button type="button" class="op op-del" onclick="deleteHabit(this);" title="delete habit">
-                        <img src="../img/delete.svg" alt="Del">
-                    </button>
+                    <button type="button" class="op op-del" title="delete habit" onclick="location.href='#openModal'">
+                        <img src="../img/delete.svg" alt="Del"></a>
+                    
+
                 </div>
+
+                <div id="openModal" class="modalbg">
+                      <div class="dialog">
+                        <a href="#close" title="Close" class="close">X</a>
+                        <h2>Are you sure you want to delete?</h2><p></p>
+                         <button type="button" class="op op-del" onclick="deleteHabitModal(this);" title="delete habit">
+                            <img src="../img/delete.svg" alt="Del">
+                         </button>
+                        </div>
+                    </div>
             </li>
 
             <li>
@@ -81,10 +95,21 @@
                     <button type="button" class="op op-edit" onclick="location.href='edit.html'" title="edit habit">
                         <img src="../img/edit.svg" alt="Edit">
                     </button>
-                    <button type="button" class="op op-del" onclick="deleteHabit(this);" title="delete habit">
-                        <img src="../img/delete.svg" alt="Del">
-                    </button>
+                    <button type="button" class="op op-del" title="delete habit" onclick="location.href='#openModal1'">
+                        <img src="../img/delete.svg" alt="Del"></a>
+                    
+
                 </div>
+
+                <div id="openModal1" class="modalbg">
+                      <div class="dialog">
+                        <a href="#close" title="Close" class="close">X</a>
+                        <h2>Are you sure you want to delete?</h2><p></p>
+                         <button type="button" class="op op-del" onclick="deleteHabitModal(this);" title="delete habit">
+                            <img src="../img/delete.svg" alt="Del">
+                         </button>
+                        </div>
+                    </div>
             </li>
 
             <li>
@@ -109,29 +134,44 @@
                     <button type="button" class="op op-edit" onclick="location.href='edit.html'" title="edit habit">
                         <img src="../img/edit.svg" alt="Edit">
                     </button>
-                    <button type="button" class="op op-del" onclick="deleteHabit(this);" title="delete habit">
-                        <img src="../img/delete.svg" alt="Del">
-                    </button>
+                    <button type="button" class="op op-del" title="delete habit" onclick="location.href='#openModal2'">
+                        <img src="../img/delete.svg" alt="Del"></a>
+                    
+
                 </div>
+
+                <div id="openModal2" class="modalbg">
+                      <div class="dialog">
+                        <a href="#close" title="Close" class="close">X</a>
+                        <h2>Are you sure you want to delete?</h2><p></p>
+                         <button type="button" class="op op-del" onclick="deleteHabitModal(this);" title="delete habit">
+                            <img src="../img/delete.svg" alt="Del">
+                         </button>
+                        </div>
+                    </div>
             </li>
 
         </ul>
     </section>
 
-    <button type="button" id="addHabit" onclick="location.href='add.html'" title="add habit">+</button>
-
-    <script type="text/javascript">
+ <script type="text/javascript">
         function showMsg(element){
             var msgElement = (element.parentNode.parentNode.getElementsByClassName("message"))[0];
             // alert(msgElement.innerHTML);
             msgElement.style.visibility="visible";
         }
-
         function deleteHabit(element){
             var child = element.parentNode.parentNode;
             var parent = child.parentNode;
             parent.removeChild(child);
         }
+
+        function deleteHabitModal(element){
+            var child = element.parentNode.parentNode.parentNode;
+            var parent = child.parentNode;
+            parent.removeChild(child);
+        }
+
     </script>
     <script src="../js/logout.js"></script>
 </body>
