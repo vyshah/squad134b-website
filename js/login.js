@@ -1,6 +1,30 @@
 
 var errorFlag = false; 
 
+
+function addUser() {
+
+    var userEmail = document.getElementById('usermail').value;  
+    Parse.initialize("BoImLGZodfLfRb4hR2YkejAdYjtSnLriHunArwnP", "1oCKt23WJYH6jHrjtEqA8wCNRmva9Pfxuj32GLR8");
+    
+
+    var Users = Parse.Object.extend("Users");
+    var users = new Users();
+
+    users.save({
+        username: userEmail}, 
+        {
+            success: function(userObject) {
+          alert('The save was successful');
+        },
+        error: function(userObject, error) {
+          // The save failed.  Error is an instance of Parse.Error.
+          // Do something if you want to do on error
+        }
+        });
+    
+}
+
 function onClickSignUp() {
 
    inputValidation();
@@ -10,6 +34,7 @@ function onClickSignUp() {
 		var signUpText = document.getElementById("signInMessage");
 		signUpText.style.display = "block";
    }
+   addUser();
 }
 
 function loginClick() {
