@@ -163,7 +163,7 @@ div label input {
 	/*border:1px solid #D0D0D0;*/
     background-color:#EFEFEF;
     float:left;
-    width:4.0em;
+    width:3.5em;
 }
 
 #ck-button label span {
@@ -228,6 +228,25 @@ span#times{
 }
 #daily-button input:hover + span {
     cursor: pointer;
+}
+
+
+
+/**
+ * style input elements that have a required
+ * attribute and a focus state
+ */
+input:required:focus {
+  border: 1px solid red;
+  outline: none;
+}
+
+/**
+ * style input elements that have a required
+ * attribute and a hover state
+ */
+input:required:hover {
+  opacity: 1;
 }
 
 
