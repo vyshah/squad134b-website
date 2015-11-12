@@ -7,6 +7,9 @@ var errorFoundPass = false;
 
 function addUser() {
 
+    if (errorFoundPass == true || errorFoundEmail == true || errorFoundEmpty == true){
+        return false;
+    }
     var userEmail = document.getElementById('usermail').value;  
     var pass = document.getElementById('password').value;
 
@@ -42,9 +45,8 @@ function onClickSignUp() {
 
    inputValidation();
    //if no errors left, add user to database
-   if (errorFoundPass == false && errorFoundEmail == false && errorFoundEmpty == false){ 
      addUser();
-    }
+    
 
    if (errorFlag == false)
    { 
