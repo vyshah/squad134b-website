@@ -7,6 +7,9 @@
 		<link rel="stylesheet" href="../css/general.css">
 		<link rel="stylesheet" href="../css/forms.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.0.19.min.js"></script>
+		<script src="../js/logout.js"></script>
+		<script src="../js/add.js"></script>
 	</head>
 	<body>
 
@@ -39,32 +42,22 @@
 		
 				<p><label>Daily Frequency</label></p>
 				<div id="daily-button">
-					<label> <input type="checkbox" name="day" value="one"><span>1</span></label>
-					<label> <input type="checkbox" name="day" value="two"><span>2</span></label>
-					<label> <input type="checkbox" name="day" value="three"><span>3</span></label>
+					<label> <input type="checkbox" name="day" id="one" value="one"><span>1</span></label>
+					<label> <input type="checkbox" name="day" id="two" value="two"><span>2</span></label>
+					<label> <input type="checkbox" name="day" id="three" value="three"><span>3</span></label>
 					<span id="times">times</span>
 				</div>
 				<p><label><span id="others_text">Others: </span><input id="others" name="others" class="stored" type="text" name="day" placeholder="e.g. More than 3 times"></label></p>
-				<p id="save_p"><input id="save" type="button" value="Save" onclick="location.href='list.html'"></p>
+				<p id="save_p"><input id="save" type="button" value="Save" onclick="addHabit()"></p>
 				
 			</form>
 
 		</div>
 		<script>
-			function selectImage(name) {
-				//Clear all the other effects
-				document.getElementById('icon1').style.border = "none";
-				document.getElementById('icon2').style.border = "none";
-				document.getElementById('icon3').style.border = "none";
-				var image = document.getElementById(name);
-				image.style.border = "5px solid #42A5F5";
-			}
-
 			$('#daily-button input[type="checkbox"]').on('change', function() {
-  			$('#daily-button input[type="checkbox"]').not(this).prop('checked', false);
-				});
+  				$('#daily-button input[type="checkbox"]').not(this).prop('checked', false);
+			});
 		</script>
-		<script src="../js/logout.js"></script>
-		<script src="../js/add.js"></script>
+
 	</body>
 </html>
