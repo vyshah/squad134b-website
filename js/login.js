@@ -62,7 +62,7 @@ function loginClick() {
 
 	if(errorFlag == false)
 	{	
-		window.location = "../src/welcome.html";
+		window.location = "../src/welcome.html?" + document.getElementById('usermail').value;
 	}
 }
 
