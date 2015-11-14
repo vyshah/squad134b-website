@@ -4,6 +4,7 @@ function addHabitClick() {
     location.href="add.html?username=" + username;
 }
 
+// Query habits from database
 function getHabits() {
 
 }
