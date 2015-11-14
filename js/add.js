@@ -1,4 +1,5 @@
 var username = location.search.substring(1).split("=")[1];
+var habitIcon = null;
 
 Parse.initialize("BoImLGZodfLfRb4hR2YkejAdYjtSnLriHunArwnP", "1oCKt23WJYH6jHrjtEqA8wCNRmva9Pfxuj32GLR8");
 
@@ -55,11 +56,9 @@ function selectImage(name) {
     habitIcon = name;
 }
 
-var habitIcon = null;
-
 function addHabit() {
     var habitTitle = document.getElementById('title').value;
-    //var habitIcon = document.getElementById(habitIcon).value;
+    console.log("title: " + habitTitle);
     var weeklyFreq = {
         "sun": false,
         "mon": false,
@@ -76,12 +75,12 @@ function addHabit() {
     };
 
     // Set weekly frequency
-    Object.keys(weeklyFreq).forEach(function (key) {
+    Object.keys(weeklyFreq).forEach(function(key) {
         weeklyFreq[key] = document.getElementById(key).checked;
     });
 
     // Set daily frequency
-    Object.keys(dailyFreq).forEach(function (key) {
+    Object.keys(dailyFreq).forEach(function(key) {
        dailyFreq[key] = document.getElementById(key).checked;
     });
 
@@ -93,16 +92,32 @@ function addHabit() {
     habit.set("weeklyFreq", weeklyFreq);
     habit.set("dailyFreq", dailyFreq);
 
-    habit.save(null, {
-        success: function (habit) {
-            alert("Your habit has been saved!");
-            window.location = "../src/list.html?username=" + username;
-        },
-        error: function (habit, error) {
-            alert("Something went wrong. Your habit was not saved.");
-            window.location = "../src/list.html?username=" + username;
+    // If all the fields are filled out, save
+    if(habitTitle != "" && habitIcon != null &&
+       atLeastOneClicked(weeklyFreq) && atLeastOneClicked(dailyFreq)) {
+        habit.save(null, {
+            success: function (habit) {
+                alert("Your habit has been saved!");
+                window.location = "../src/list.html?username=" + username;
+            },
+            error: function (habit, error) {
+                alert("Something went wrong. Your habit was not saved.");
+                window.location = "../src/list.html?username=" + username;
+            }
+        });
+    } else {
+        alert("One or more fields is missing!");
+    }
+}
+
+function atLeastOneClicked(buttonHash) {
+    var clicked = false;
+    Object.keys(buttonHash).forEach(function(key) {
+        if(buttonHash[key]) {
+            clicked = true;
         }
     });
+    return clicked;
 }
 
 
