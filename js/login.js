@@ -1,5 +1,4 @@
-
-var errorFlag = false; 
+var errorFlag = false;
 var errorFoundEmpty = false;
 var errorFoundEmail = false;
 var errorFoundPass = false;
@@ -41,7 +40,6 @@ function addUser() {
 }
 
 function onClickSignUp() {
-    
 
    inputValidation();
    //if no errors left, add user to database
@@ -62,7 +60,7 @@ function loginClick() {
 
 	if(errorFlag == false)
 	{	
-		window.location = "../src/welcome.html?" + document.getElementById('usermail').value;
+		window.location = "../src/welcome.html?username=" + document.getElementById('usermail').value;
 	}
 }
 

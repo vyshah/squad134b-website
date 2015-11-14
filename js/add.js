@@ -1,3 +1,5 @@
+var username = location.search.substring(1).split("=")[1];
+
 Parse.initialize("BoImLGZodfLfRb4hR2YkejAdYjtSnLriHunArwnP", "1oCKt23WJYH6jHrjtEqA8wCNRmva9Pfxuj32GLR8");
 
 $(document).ready(function () {
@@ -85,21 +87,22 @@ function addHabit() {
 
     var Habit = new Parse.Object.extend("Habit");
     var habit = new Habit();
+    habit.set("username", username);
     habit.set("title", habitTitle);
     habit.set("icon", habitIcon);
     habit.set("weeklyFreq", weeklyFreq);
     habit.set("dailyFreq", dailyFreq);
 
     habit.save(null, {
-            success: function(habit) {
-                alert("Your habit has been saved!");
-            },
-            error: function(habit, error) {
-                alert("Something went wrong. Your habit was not saved.");
-            }
+        success: function (habit) {
+            alert("Your habit has been saved!");
+            window.location = "../src/list.html?username=" + username;
+        },
+        error: function (habit, error) {
+            alert("Something went wrong. Your habit was not saved.");
+            window.location = "../src/list.html?username=" + username;
         }
-    );
-    window.location = "../src/list.html";
+    });
 }
 
 
