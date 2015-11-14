@@ -7,4 +7,6 @@ function addHabitClick() {
 // Query habits from database
 function getHabits() {
 
+
+    
 }
