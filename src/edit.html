@@ -6,15 +6,11 @@
 		<title>Edit a habit</title>
 		<link rel="stylesheet" href="../css/general.css">
 		<link rel="stylesheet" href="../css/forms.css">
+		<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.0.19.min.js"></script>
+		<script src="../js/edit.js"></script>
+		<script src="../js/logout.js"></script>
 	</head>
 	<body>
-		<script>
-			function onStart() {
-            	document.getElementById("icon3").style.border="5px solid #42A5F5";
-
-			}
-			window.onload = onStart;
-		</script>
 		<div class="forms">
 			<div class="header">
 				<h2>Edit A Habit</h2>
@@ -55,16 +51,5 @@
 			</form>
 
 		</div>
-		<script>
-			function selectImage(name) {
-				//Clear all the other effects
-				document.getElementById('icon1').style.border = "none";
-				document.getElementById('icon2').style.border = "none";
-				document.getElementById('icon3').style.border = "none";
-				var image = document.getElementById(name);
-				image.style.border = "5px solid #42A5F5";
-			}
-		</script>
-		<script src="../js/logout.js"></script>
 	</body>
 </html>
