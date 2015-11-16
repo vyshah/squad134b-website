@@ -59,5 +59,56 @@
         }
 
     </script>
+<script type="text/javascript">
+
+    var ops = {
+        body: "You have been inactive for an hour. Have you completed a habit recently?",
+        icon: '../hourglass-icon.png',
+    }
+
+    //ay mang ya shit's broke quit usin IE 
+    if (!("Notification" in window)) {
+        alert("This browser does not support system notifications");
+    }
+
+    else if (Notification.permission === "granted") {
+        // If it's okay let's create a notification for timer
+        var timer;
+        var timeLimit = 1000 * 60 * 60;
+
+        //call this function if the timer runs out
+        var timeout = function () {
+            var notification = new Notification("virtue/vice", ops);
+        }
+
+        //reset timer onclick
+        timer = setTimeout(timeout, timeLimit);
+        document.onclick = function() {
+            clearTimeout(timer);
+            timer = setTimeout(timeout, timeLimit);
+        };
+    }
+
+    // Otherwise, we need to ask the user for permission
+    else {
+        Notification.requestPermission(function (permission) {
+            // If the user accepts, let's create a notification
+            if (permission === "granted") {
+                var timer;
+                var timeLimit = 1000 * 60 * 60;
+
+                var timeout = function () {
+                    var notification = new Notification("virtue/vice", ops);
+                }
+
+                timer = setTimeout(timeout, timeLimit);
+                document.onclick = function() {
+                    clearTimeout(timer);
+                    timer = setTimeout(timeout, timeLimit);
+                };
+            }
+        });
+    }
+</script>
 </body>
 </html>

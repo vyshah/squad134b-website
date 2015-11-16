@@ -56,6 +56,10 @@ function onClickSignUp() {
 
 function loginClick() {
 
+    createNotification("test");
+
+    console.log('reached');
+    
 	inputValidation();
 
 	if(errorFlag == false)
@@ -159,4 +163,73 @@ function validatePassword(fld, passObj ) {
         passObj.style.background = 'White';
     }
    return true;
+}
+
+function createNotification(title) {
+
+// Let's check if the browser supports notifications
+    if (!"Notification" in window) {
+      console.log("This browser does not support notifications.");
+    }
+
+    // Let's check if the user is okay to get some notification
+    else if (Notification.permission === "granted") {
+      // If it's okay let's create a notification
+      
+      var img = '../gym-icon.png';
+      var text = 'HEY! Your task "' + title + '" is now overdue.';
+      var notification = new Notification('To do list', { body: text, icon: img });
+      
+      window.navigator.vibrate(500);
+    }
+
+    // Otherwise, we need to ask the user for permission
+    // Note, Chrome does not implement the permission static property
+    // So we have to check for NOT 'denied' instead of 'default'
+    else if (Notification.permission !== 'denied') {
+      Notification.requestPermission(function (permission) {
+
+        // Whatever the user answers, we make sure Chrome stores the information
+        if(!('permission' in Notification)) {
+          Notification.permission = permission;
+        }
+
+        // If the user is okay, let's create a notification
+        if (permission === "granted") {
+          var img = '/to-do-notifications/img/icon-128.png';
+          var text = 'HEY! Your task "' + title + '" is now overdue.';
+          var notification = new Notification('To do list', { body: text, icon: img });
+          
+          window.navigator.vibrate(500);
+        }
+      });
+    }
+
+    // At last, if the user already denied any notification, and you 
+    // want to be respectful there is no need to bother him any more.
+
+    // now we need to update the value of notified to "yes" in this particular data object, so the
+    // notification won't be set off on it again
+
+    // first open up a transaction as usual
+    // var objectStore = db.transaction(['toDoList'], "readwrite").objectStore('toDoList');
+
+    // // get the to-do list object that has this title as it's title
+    // var objectStoreTitleRequest = objectStore.get(title);
+
+    // objectStoreTitleRequest.onsuccess = function() {
+    //   // grab the data object returned as the result
+    //   var data = objectStoreTitleRequest.result;
+      
+    //   // update the notified value in the object to "yes"
+    //   data.notified = "yes";
+      
+    //   // create another request that inserts the item back into the database
+    //   var updateTitleRequest = objectStore.put(data);
+      
+    //   // when this new request succeeds, run the displayData() function again to update the display
+    //   updateTitleRequest.onsuccess = function() {
+    //     displayData();
+      // }
+    // }
 }
