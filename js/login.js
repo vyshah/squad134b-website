@@ -56,10 +56,6 @@ function onClickSignUp() {
 
 function loginClick() {
 
-    createNotification("test");
-
-    console.log('reached');
-
 	inputValidation();
 
 	if(errorFlag == false)
