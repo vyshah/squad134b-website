@@ -1,13 +1,11 @@
+Parse.initialize("BoImLGZodfLfRb4hR2YkejAdYjtSnLriHunArwnP", "1oCKt23WJYH6jHrjtEqA8wCNRmva9Pfxuj32GLR8");
+
 var username = sessionStorage.getItem("username");
-console.log(username);
 var habitIconPathHash = {
     'icon1': '../img/sleep.jpg',
     'icon2': '../img/salad.jpg',
     'icon3': '../img/run.jpg'
 };
-
-Parse.initialize("BoImLGZodfLfRb4hR2YkejAdYjtSnLriHunArwnP", "1oCKt23WJYH6jHrjtEqA8wCNRmva9Pfxuj32GLR8");
-
 
 var results = getHabits();
 
@@ -16,7 +14,7 @@ function addHabitClick() {
 }
 
 function editHabitClick(title) {
-    location.href="edit.html?" + username + "|" + title; //+ "|" + icon;
+    location.href="edit.html?" + username + "|" + title;
 }
 
 // Query habits from database
@@ -38,15 +36,14 @@ function displayHabits(results) {
     for(i = 0; i < results.length; i++) {
         var object = results[i];
         var habitTitle = object.get('title');
-        console.log(habitTitle);
         var iconString = object.get('icon');
-
-        var clonedHabitContainer = $(".habit-container.template").clone().removeClass("template");
+        var objectId = object.id;
 
         document.getElementsByClassName("habit-name")[0].innerHTML = habitTitle;
         $(document.getElementsByClassName("habit-icon")[0]).attr("src", habitIconPathHash[iconString]);
-        $(document.getElementsByClassName("op op-edit")[0]).attr("onclick", "location.href=\"edit.html?" + habitTitle + "|" + iconString + "\"");
+        $(document.getElementsByClassName("op op-edit")[0]).attr("onclick", "location.href=\"edit.html?" + objectId + "\"");
 
+        var clonedHabitContainer = $(".habit-container.template").clone().removeClass("template");
         clonedHabitContainer.appendTo("#habit-list");
     }
 }

@@ -1,7 +1,7 @@
+Parse.initialize("BoImLGZodfLfRb4hR2YkejAdYjtSnLriHunArwnP", "1oCKt23WJYH6jHrjtEqA8wCNRmva9Pfxuj32GLR8");
+
 var username = sessionStorage.getItem("username");
 var habitIcon = null;
-
-Parse.initialize("BoImLGZodfLfRb4hR2YkejAdYjtSnLriHunArwnP", "1oCKt23WJYH6jHrjtEqA8wCNRmva9Pfxuj32GLR8");
 
 $(document).ready(function () {
     function init() {
