@@ -1,22 +1,20 @@
-var username = location.search.substring(1).split("=")[1];
+Parse.initialize("BoImLGZodfLfRb4hR2YkejAdYjtSnLriHunArwnP", "1oCKt23WJYH6jHrjtEqA8wCNRmva9Pfxuj32GLR8");
+
+var username = sessionStorage.getItem("username");
 var habitIconPathHash = {
     'icon1': '../img/sleep.jpg',
     'icon2': '../img/salad.jpg',
     'icon3': '../img/run.jpg'
 };
 
-Parse.initialize("BoImLGZodfLfRb4hR2YkejAdYjtSnLriHunArwnP", "1oCKt23WJYH6jHrjtEqA8wCNRmva9Pfxuj32GLR8");
-
-
 var results = getHabits();
-displayHabits(results);
 
 function addHabitClick() {
     location.href="add.html?username=" + username;
 }
 
-function editHabitClick() {
-    location.href="edit.html?" + username;
+function editHabitClick(title) {
+    location.href="edit.html?" + username + "|" + title;
 }
 
 // Query habits from database
@@ -35,62 +33,17 @@ function getHabits() {
 }
 
 function displayHabits(results) {
-    var html = '';
-
     for(i = 0; i < results.length; i++) {
         var object = results[i];
         var habitTitle = object.get('title');
         var iconString = object.get('icon');
+        var objectId = object.id;
 
-        // HTML
-        html    += '<li>'
-            +       '<ul class="habit-info\">'
-            +           '<li><div class="habit-name">' + habitTitle + '</div></li>'
-            +           '<hr class="habitdivider"><br>'
-            +           '<li><img class="habit-icon" src="' + habitIconPathHash[iconString] + '" alt="habit icon"></li>'
-            +       '</ul>'
-            +       '<div class="message">'
-            +           '<span class="message-total">'
-            +               '<strong>2</strong> days in a row! Best Record: <strong>5</strong><br>'
-            +               '<p></p>'
-            +               '<p class="styled">'
-            +                   '<meter min="0" max="100" low="25" high="75" optimum="100" value="80">'
-            +               '</p><br>'
-            +               '<span class="message-today" id="result"></span>'
-            +           '</span><br>'
-            +       '</div>'
-            +       '<div class="habit-op">'
-            +           '<button type="button" class="op op-done" onclick="location.href=\'#successModal\'" title="done">'
-            +               '<img src="../img/done.svg" alt="Done">'
-            +           '</button>'
-            +           '<button type="button" class="op op-edit" onclick="editHabitClick()" title="edit habit">'
-            +               '<img src="../img/edit.svg" alt="Edit">'
-            +           '</button>'
-            +           '<button type="button" class="op op-del" title="delete habit" onclick="location.href=\'#openModal\'">'
-            +               '<img src="../img/delete.svg" alt="Del">'
-            +           '</button>'
-            +       '</div>'
-            +       '<div id="openModal" class="modalbg">'
-            +           '<div class="dialog">'
-            +               '<a href="#close" title="Close" class="close"><center><p class="entypo-cancel-circled"></p></center></a>'
-            +               '<center><h2>Are you sure you want to delete?</h2></center><p></p>'
-            +               '<center><button type="button" class="op op-del" onclick="deleteHabitModal(this);" title="delete habit">'
-            +                   '<img src="../img/delete.svg" alt="Del">'
-            +               '</button></center>'
-            +           '</div>'
-            +       '</div>'
-            +       '<div id="successModal" class="modalbg">'
-            +           '<div class="dialog">'
-            +               '<a href="#close" title="Close" class="close"><center><p class="entypo-cancel-circled"></p></center></a>'
-            +               '<center><h2>Congratulations!</h2>Great job on completing this habit.<P></P></center>'
-            +               '<center><button type="button" class="op op-done" onclick="clickCounter();" title="done">'
-            +                   '<a href="#close"><img src="../img/done.svg" alt="Done"></a>'
-            +               '</button></center>'
-            +           '</div>'
-            +       '</div>'
-            +   '</li>'
-        ;
+        document.getElementsByClassName("habit-name")[0].innerHTML = habitTitle;
+        $(document.getElementsByClassName("habit-icon")[0]).attr("src", habitIconPathHash[iconString]);
+        $(document.getElementsByClassName("op op-edit")[0]).attr("onclick", "location.href=\"edit.html?" + objectId + "\"");
+
+        var clonedHabitContainer = $(".habit-container.template").clone().removeClass("template");
+        clonedHabitContainer.appendTo("#habit-list");
     }
-
-    document.getElementById("habit-list").innerHTML = html;
 }

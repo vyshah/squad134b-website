@@ -59,8 +59,9 @@ function loginClick() {
 	inputValidation();
 
 	if(errorFlag == false)
-	{	
-		window.location = "../src/welcome.html?username=" + document.getElementById('usermail').value;
+	{
+        sessionStorage.setItem("username", document.getElementById('usermail').value);
+		window.location = "../src/welcome.html";
 	}
 }
 

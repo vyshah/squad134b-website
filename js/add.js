@@ -1,7 +1,7 @@
-var username = location.search.substring(1).split("=")[1];
-var habitIcon = null;
-
 Parse.initialize("BoImLGZodfLfRb4hR2YkejAdYjtSnLriHunArwnP", "1oCKt23WJYH6jHrjtEqA8wCNRmva9Pfxuj32GLR8");
+
+var username = sessionStorage.getItem("username");
+var habitIcon = null;
 
 $(document).ready(function () {
     function init() {
@@ -45,7 +45,6 @@ $('#save').click(function() {
     $('#localStorage').get(0).reset();
 });
 
-
 function selectImage(name) {
     //Clear all the other effects
     document.getElementById('icon1').style.border = "none";
@@ -58,7 +57,6 @@ function selectImage(name) {
 
 function addHabit() {
     var habitTitle = document.getElementById('title').value;
-    console.log("title: " + habitTitle);
     var weeklyFreq = {
         "sun": false,
         "mon": false,
@@ -98,11 +96,11 @@ function addHabit() {
         habit.save(null, {
             success: function (habit) {
                 alert("Your habit has been saved!");
-                window.location = "../src/list.html?username=" + username;
+                window.location = "../src/list.html";
             },
             error: function (habit, error) {
                 alert("Something went wrong. Your habit was not saved.");
-                window.location = "../src/list.html?username=" + username;
+                window.location = "../src/list.html";
             }
         });
     } else {
