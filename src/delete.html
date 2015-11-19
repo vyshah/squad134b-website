@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit a habit</title>
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/forms.css">
+    <link rel="stylesheet" href="../css/delete.css">
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.0.19.min.js"></script>
+    <script src="../js/delete.js"></script>
+    <script src="../js/logout.js"></script>
+</head>
+<body>
+    <div class="forms">
+        <div class="header">
+            <h2>Delete A Habit</h2>
+            <div class="logout" style="margin-left: 35.5%">
+                <input class="logoutButton" type="button" value="Logout" onclick="logoutClick()">
+            </div>
+        </div>
+    </div><br><br>
+    <div>
+        <h3 id="delete-confirmation"></h3>
+    </div>
+    <button type="button" id="yes" class="confirmation-button" onclick="deleteHabit()" title="delete habit">
+        Yes
+    </button>
+    <button type="button" id="no" class="confirmation-button" onclick="location.href='list.html'" title="delete habit">
+        No
+    </button>
+</body>

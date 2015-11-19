@@ -13,10 +13,6 @@ function addHabitClick() {
     location.href="add.html?username=" + username;
 }
 
-function editHabitClick(title) {
-    location.href="edit.html?" + username + "|" + title;
-}
-
 // Query habits from database
 function getHabits() {
     var Habit = Parse.Object.extend("Habit");
@@ -42,6 +38,7 @@ function displayHabits(results) {
         document.getElementsByClassName("habit-name")[0].innerHTML = habitTitle;
         $(document.getElementsByClassName("habit-icon")[0]).attr("src", habitIconPathHash[iconString]);
         $(document.getElementsByClassName("op op-edit")[0]).attr("onclick", "location.href=\"edit.html?" + objectId + "\"");
+        $(document.getElementsByClassName("op op-del")[0]).attr("onclick", "location.href=\"delete.html?" + objectId + "\"");
 
         var clonedHabitContainer = $(".habit-container.template").clone().removeClass("template");
         clonedHabitContainer.appendTo("#habit-list");

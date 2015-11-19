@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../css/list.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.0.19.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
     <script src="../js/logout.js"></script>
     <script src="../js/list.js"></script>
     </head>
@@ -58,12 +59,12 @@
                     <button type="button" class="op op-edit" onclick="location.href='edit.html'" title="edit habit">
                         <img src="../img/edit.svg" alt="Edit">
                     </button>
-                    <button type="button" class="op op-del" title="delete habit" onclick="location.href='#openModal'">
+                    <button type="button" class="op op-del" title="delete habit" onclick="location.href='delete.html'">
                         <img src="../img/delete.svg" alt="Del"></a>
                     </button>
                 </div>
 
-                <div id="openModal" class="modalbg">
+                <div id="openModal" class="modalbg" hidden="hidden">
                     <div class="dialog">
                         <a href="#close" title="Close" class="close"><center><p class="entypo-cancel-circled"></p></center></a>
                         <center><h2>Are you sure you want to delete?</h2></center><p></p>
@@ -105,7 +106,6 @@
             var parent = child.parentNode;
             parent.removeChild(child);
         }
-
     </script>
 <script type="text/javascript">
 

@@ -1,8 +1,7 @@
 Parse.initialize("BoImLGZodfLfRb4hR2YkejAdYjtSnLriHunArwnP", "1oCKt23WJYH6jHrjtEqA8wCNRmva9Pfxuj32GLR8");
 
 var username = sessionStorage.getItem("username");
-var params = location.search.substring(1).split("|");
-var objectId = params[0];
+var objectId = location.search.substring(1);
 
 var oldHabitTitle = null;
 var iconString = null;
