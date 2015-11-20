@@ -45,6 +45,7 @@ Scott:
 Vyom:
 	Notifications
 		Note: Not supported on Internet Explorer
+	Hosting
 
 Dan:
 	Conformance
