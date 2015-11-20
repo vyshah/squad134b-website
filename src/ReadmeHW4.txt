@@ -28,7 +28,12 @@ Pauline:
 
 Scott:
 	Email/Password Authentication
-	CRUD for actions
+	Login/Signup Funcationality
+	CRUD for actions:
+		Add Habit
+		Edit Habit
+		Delete Habit
+		Display Habits
 Vyom:
 	Notifications
 	Note:
