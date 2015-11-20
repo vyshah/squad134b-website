@@ -25,6 +25,9 @@ Jonathan:
 Pauline:
 	Delete Habit Confirmation
 	Signup for Parse
+	Added Divider to List UI 
+	Confirmation Modals
+	Modified UI Buttons
 
 Scott:
 	Email/Password Authentication
