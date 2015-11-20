@@ -7,6 +7,7 @@ var habitToDelete = null;
 getHabitToDelete();
 
 function getHabitToDelete() {
+    console.log("object id: " + objectId);
     var Habit = Parse.Object.extend("Habit");
     var query = new Parse.Query(Habit);
     query.get(objectId, {
