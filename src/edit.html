@@ -13,7 +13,7 @@
 	<body>
 		<div class="forms">
 			<div class="header">
-				<h2>Edit A Habit</h2>
+				<h2 class="titles">Edit A Habit</h2>
 				<div class="logout" style="margin-left: 35.5%">
 					<input class="logoutButton" type="button" value="Logout" onclick="logoutClick()">
 				</div>
@@ -40,9 +40,12 @@
 		
 				<p><label>Daily Frequency</label></p>
 				<div id="daily-button">
-					<label> <input id="one" type="checkbox" name="day" value="one"><span>1</span></label>
-					<label> <input id="two" type="checkbox" name="day" value="two"><span>2</span></label>
-					<label> <input id="three" type="checkbox" name="day" value="three"><span>3</span></label>
+					<label> <input type="checkbox" name="day" id="one" value="zero" checked><span>0</span></label>
+					<label> <input type="checkbox" name="day" id="one" value="one"><span>1</span></label>
+					<label> <input type="checkbox" name="day" id="two" value="two"><span>2</span></label>
+					<label> <input type="checkbox" name="day" id="three" value="three"><span>3</span></label>
+					<label> <input type="checkbox" name="day" id="one" value="four"><span>4</span></label>
+					<label> <input type="checkbox" name="day" id="one" value="five"><span>5</span></label>
 					<span id="times">times</span>
 				</div>
 				<p><label><span id="others_text">Others: </span><input id="others" type="text" name="day" placeholder="More than 3 times"></label></p>

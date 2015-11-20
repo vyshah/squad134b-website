@@ -104,9 +104,13 @@ h2 {
 
 .header {
 	margin-top: 3px;	
-	background-color: #bdbdbd;
+	background-color: #404040;
 }
 
+.titles {
+	color: white;
+	font-family: 'Helvetica', sans-serif;
+}
 
 img.icon:hover{
 	-webkit-transform: scale(1.3);
