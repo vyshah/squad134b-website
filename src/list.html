@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="../css/list.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.0.19.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
     <script src="../js/logout.js"></script>
     <script src="../js/list.js"></script>
     </head>
@@ -30,6 +29,29 @@
 </head>
 <!------------------------------------------------------------------------------------------------------------- -->
 <body>
+
+<div id="successModal" class="modalbg" hidden="visible">
+                    <div class="dialog">
+                        <a href="#close" title="Close" class="close"><center><p class="entypo-cancel-circled"></p></center></a>
+                        <center><h2>Congratulations!</h2>
+                            Great job on completing this habit.<P></P></center>
+                        <center><button type="button" class="op op-done" onclick="clickCounter();" title="done">
+                            <a href="#close"><img src="../img/done.svg" alt="Done"></a>
+                        </button></center>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="openModal" class="modalbg" hidden="hidden">
+                    <div class="dialog">
+                        <a href="#close" title="Close" class="close"><center><p class="entypo-cancel-circled"></p></center></a>
+                        <center><h2>Are you sure you want to delete?</h2></center><p></p>
+                        <center><button type="button" class="op op-del" onclick="deleteHabitModal(this);" title="delete habit">
+                            <img src="../img/delete.svg" alt="Del">
+                        </button></center>
+                        </button>
+                    </div>
+                </div>
     <section>
         <h1>Habit List</h1>
         <div class="logout" style="margin-left: 42%">
@@ -69,44 +91,18 @@
                         <a href="#close" title="Close" class="close"><center><p class="entypo-cancel-circled"></p></center></a>
                         <center><h2>Are you sure you want to delete?</h2></center><p></p>
                         <center><button type="button" class="op op-del" onclick="deleteHabitModal(this);" title="delete habit">
-                            <img src="../img/delete.svg" alt="Del">
                         </button></center>
                         </button>
                     </div>
                 </div>
-                <div id="successModal" class="modalbg">
-                    <div class="dialog">
-                        <a href="#close" title="Close" class="close"><center><p class="entypo-cancel-circled"></p></center></a>
-                        <center><h2>Congratulations!</h2>
-                            Great job on completing this habit.<P></P></center>
-                        <center><button type="button" class="op op-done" onclick="clickCounter();" title="done">
-                            <a href="#close"><img src="../img/done.svg" alt="Done"></a>
-                        </button></center>
-                        </button>
-                    </div>
-                </div>
+
             </li>
         </ul>
     </section>
 
- <button type="button" id="addHabit" onclick="addHabitClick()" title="add habit"><center><p class="entypo-plus-circled content"></p></center></button>
- <script type="text/javascript">
-        function showMsg(element){
-            var msgElement = (element.parentNode.parentNode.getElementsByClassName("message"))[0];
-            // alert(msgElement.innerHTML);
-            msgElement.style.visibility="visible";
-        }
-        function deleteHabit(element){
-            var child = element.parentNode.parentNode;
-            var parent = child.parentNode;
-            parent.removeChild(child);
-        }
-        function deleteHabitModal(element){
-            var child = element.parentNode.parentNode.parentNode.parentNode;
-            var parent = child.parentNode;
-            parent.removeChild(child);
-        }
-    </script>
+ <button type="button" id="addHabit" onclick="addHabitClick()" title="add habit"><center><p class="entypo-plus-circled content"></p></center>
+ </button>
+
 <script type="text/javascript">
 
     var ops = {
