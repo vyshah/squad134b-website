@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Add a habit</title>
+		<title class="Titles" style=>Add a habit</title>
 		<link rel="stylesheet" href="../css/general.css">
 		<link rel="stylesheet" href="../css/forms.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -42,12 +42,15 @@
 		
 				<p><label>Daily Frequency</label></p>
 				<div id="daily-button">
+					<label> <input type="checkbox" name="day" id="one" value="zero" checked><span>0</span></label>
 					<label> <input type="checkbox" name="day" id="one" value="one"><span>1</span></label>
 					<label> <input type="checkbox" name="day" id="two" value="two"><span>2</span></label>
 					<label> <input type="checkbox" name="day" id="three" value="three"><span>3</span></label>
+					<label> <input type="checkbox" name="day" id="one" value="four"><span>4</span></label>
+					<label> <input type="checkbox" name="day" id="one" value="five"><span>5</span></label>
 					<span id="times">times</span>
 				</div>
-				<p><label><span id="others_text">Others: </span><input id="others" name="others" class="stored" type="text" name="day" placeholder="e.g. More than 3 times"></label></p>
+				<p><label><span id="others_text">Others: </span><input id="others" name="others" class="stored" type="text" name="day" placeholder="e.g. 6 times"></label></p>
 				<p id="save_p"><input id="save" type="button" value="Save" onclick="addHabit()"></p>
 				
 			</form>
