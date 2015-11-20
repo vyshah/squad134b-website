@@ -28,6 +28,7 @@ Pauline:
 	Added Divider to List UI 
 	Confirmation Modals
 	Modified UI Buttons
+	Local Storage of Form Inputs in case user reloads form
 
 Scott:
 	Email/Password Authentication
