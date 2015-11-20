@@ -14,12 +14,14 @@ Homework 4
 Tasks:
 
 Jonathan:
-	Daily Frequency Button (Choose one)
-	Email/Password Authentication
+	Daily Frequency Button 
+		-Choose one restriction on add habit and edit habit
+	Email/Password Authentication 
 	Logout Button
 	Login/SignUp Functionality
 	Add Usernames to Parse Database
 	Create Parse Link with Login Class
+	Updated CSS headers 
 
 
 Pauline:
@@ -40,7 +42,7 @@ Scott:
 		Display Habits
 Vyom:
 	Notifications
-	Note:
+		Note: Not supported on Internet Explorer
 
 Dan:
 	Conformance

@@ -6,9 +6,11 @@
 		<title>Edit a habit</title>
 		<link rel="stylesheet" href="../css/general.css">
 		<link rel="stylesheet" href="../css/forms.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.0.19.min.js"></script>
 		<script src="../js/edit.js"></script>
 		<script src="../js/logout.js"></script>
+
 	</head>
 	<body>
 		<div class="forms">
@@ -44,15 +46,22 @@
 					<label> <input type="checkbox" name="day" id="one" value="one"><span>1</span></label>
 					<label> <input type="checkbox" name="day" id="two" value="two"><span>2</span></label>
 					<label> <input type="checkbox" name="day" id="three" value="three"><span>3</span></label>
-					<label> <input type="checkbox" name="day" id="one" value="four"><span>4</span></label>
-					<label> <input type="checkbox" name="day" id="one" value="five"><span>5</span></label>
+					<label> <input type="checkbox" name="day" id="four" value="four"><span>4</span></label>
+					<label> <input type="checkbox" name="day" id="five" value="five"><span>5</span></label>
 					<span id="times">times</span>
 				</div>
-				<p><label><span id="others_text">Others: </span><input id="others" type="text" name="day" placeholder="More than 3 times"></label></p>
+				<p><label><span id="others_text">Others: </span><input id="others" type="text" name="day" placeholder="e.g. 6 times"></label></p>
 				<p id="save_p"><input id="save" type="button" value="Save It" onclick="editHabit()"></p>
 				
 			</form>
 
 		</div>
+		<script type="text/javascript">
+			$('#daily-button input[type="checkbox"]').on('change', function() {
+				$('#daily-button input[type="checkbox"]').not(this).prop('checked', false);
+			} );
+		       
+
+		</script>
 	</body>
 </html>
