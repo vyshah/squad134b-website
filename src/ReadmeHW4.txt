@@ -22,6 +22,7 @@ Jonathan:
 	Add Usernames to Parse Database
 	Create Parse Link with Login Class
 	Updated CSS headers 
+	Upload img icon functionality add/edit habit
 
 
 Pauline:

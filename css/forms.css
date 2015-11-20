@@ -253,4 +253,10 @@ input:required:hover {
   opacity: 1;
 }
 
+#image-upload > input {
+	display: none;
+}
+#file-input {
+	display: none;
+}
 
