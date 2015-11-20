@@ -142,11 +142,11 @@ function validatePassword(fld, passObj ) {
  
     } else if (illegalChars.test(fld)) {
         error = "The password contains illegal characters.\n";
-        passObj.style.background = 'Yellow';
-        errorFlag = true;
-        errorFoundPass =true;
-        alert(error);
-        return false;
+        //passObj.style.background = 'Yellow';
+        //errorFlag = true;
+        //errorFoundPass =true;
+        //alert(error);
+        //return false;
  
     } else if ( (fld.search(/[a-zA-Z]+/)==-1) || (fld.search(/[0-9]+/)==-1) ) {
         error = "The password must contain at least one numeral.\n";
