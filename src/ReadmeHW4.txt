@@ -32,6 +32,7 @@ Pauline:
 	Confirmation Modals
 	Modified UI Buttons
 	Local Storage of Form Inputs in case user reloads form
+	Styled Meter Bars but was removed
 
 Scott:
 	Email/Password Authentication
