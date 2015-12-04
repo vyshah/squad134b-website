@@ -27,13 +27,13 @@
 				<img id="icon1" class="icon" onclick="selectImage('icon1');" src="../img/sleep.jpg" alt="sleep image"/>
 				<img id="icon2" class="icon" onclick="selectImage('icon2');" src="../img/salad.jpg" alt="eat image"/>
 				<img id="icon3" class="icon" onclick="selectImage('icon3');" src="../img/run.jpg" alt="run image"/>
-    		  	
+
     		  	<label for="file-input">
       				<img id="icon4" class="icon" src="../img/add.png" alt="find a image"/>
    				</label>
    				 <input id="file-input" type="file"/>
-				
-				
+
+
 
 				<p><label>Weekly Frequency</label></p>
 				<div id="ck-button">
@@ -45,21 +45,10 @@
 					<label> <input id="fri" type="checkbox" name="date" value="friday"><span>Fri</span></label>
 					<label> <input id="sat" type="checkbox" name="date" value="saturday"><span>Sat</span></label>
 				</div>
-		
-		
-				<p><label>Daily Frequency</label></p>
-				<div id="daily-button">
-					<label> <input type="checkbox" name="day" id="one" value="zero" checked><span>0</span></label>
-					<label> <input type="checkbox" name="day" id="one" value="one"><span>1</span></label>
-					<label> <input type="checkbox" name="day" id="two" value="two"><span>2</span></label>
-					<label> <input type="checkbox" name="day" id="three" value="three"><span>3</span></label>
-					<label> <input type="checkbox" name="day" id="four" value="four"><span>4</span></label>
-					<label> <input type="checkbox" name="day" id="five" value="five"><span>5</span></label>
-					<span id="times">times</span>
-				</div>
-				<p><label><span id="others_text">Others: </span><input id="others" type="text" name="day" placeholder="e.g. 6 times"></label></p>
+
+				<p><label><span id="others_text">Daily Frequency </span><input id="others" type="number" name="day" placeholder="e.g. 6"></label></p>
 				<p id="save_p"><input id="save" type="button" value="Save It" onclick="editHabit()"></p>
-				
+
 			</form>
 
 		</div>
@@ -67,7 +56,7 @@
 			$('#daily-button input[type="checkbox"]').on('change', function() {
 				$('#daily-button input[type="checkbox"]').not(this).prop('checked', false);
 			} );
-		       
+
 
 		</script>
 	</body>
