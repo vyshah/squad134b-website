@@ -36,7 +36,7 @@ function displayHabits(results) {
         var objectId = object.id;
 
         document.getElementsByClassName("habit-name")[0].innerHTML = habitTitle;
-        $(document.getElementsByClassName("op op-done")[0]).attr("onclick", "location.href=#successModal'");
+        $(document.getElementsByClassName("op op-done")[0]).attr("onclick", "checkClicked(object)");
         $(document.getElementsByClassName("habit-icon")[0]).attr("src", habitIconPathHash[iconString]);
         $(document.getElementsByClassName("op op-edit")[0]).attr("onclick", "location.href=\"edit.html?" + objectId + "\"");
         $(document.getElementsByClassName("op op-del")[0]).attr("onclick", "location.href=\"delete.html?" + objectId + "\"");
@@ -44,4 +44,25 @@ function displayHabits(results) {
         var clonedHabitContainer = $(".habit-container.template").clone().removeClass("template");
         clonedHabitContainer.appendTo("#habit-list");
     }
+
+  function checkClicked(habit){
+    var limit = habit.get('dailyFreq');
+    var done = habit.get('dailyHabitCounter');
+
+    if (done >= limit){
+      return;
+    }
+
+    done = done + 1;
+    habit.set('dailyHabitCounter', done);
+
+    if (done >= limit){
+      location.href=#successModal2;
+    }
+    else {
+      location.href=#successModal;
+    }
+
+
+  }
 }

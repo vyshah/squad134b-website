@@ -43,6 +43,10 @@ function selectImage(name) {
 function editHabit() {
     var habitTitle = document.getElementById('title').value;
     var dailyFreq = parseInt(document.getElementById('daily-frequency').value);
+    var currDone = habitToEdit.get("dailyHabitCounter");
+    if (currDone >= dailyFreq){
+      currDone = dailyFreq;
+    }
 
     // Set weekly frequency
     var weeklyFreq = {
@@ -62,6 +66,8 @@ function editHabit() {
     habitToEdit.set("icon", iconString);
     habitToEdit.set("weeklyFreq", weeklyFreq);
     habitToEdit.set("dailyFreq", dailyFreq);
+    habitToEdit.set("dailyHabitCounter", currDone);
+
 
     // If all the fields are filled out, save
     if(habitTitle != "" && iconString != null &&

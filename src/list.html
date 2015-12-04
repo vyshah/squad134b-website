@@ -42,6 +42,17 @@
                     </div>
                 </div>
 
+<div id="successModal2" class="modalbg" hidden="visible">
+                    <div class="dialog">
+                        <a href="#close" title="Close" class="close"><center><p class="entypo-cancel-circled"></p></center></a>
+                        <center><h2>Congratulations!</h2>
+                            You have reached your daily goal for this habit!<P></P></center>
+                        <center><button type="button" class="op op-done" onclick="clickCounter();" title="done">
+                            <a href="#close"><img src="../img/done.svg" alt="Done"></a>
+                        </button></center>
+                        </button>
+                    </div>
+                </div>
                 <!--<div id="openModal" class="modalbg" hidden="hidden">-->
                     <!--<div class="dialog">-->
                         <!--<a href="#close" title="Close" class="close"><center><p class="entypo-cancel-circled"></p></center></a>-->
@@ -100,7 +111,7 @@
         icon: '../hourglass-icon.png',
     }
 
-    //ay mang ya shit's broke quit usin IE 
+    //ay mang ya shit's broke quit usin IE
     if (!("Notification" in window)) {
         alert("This browser does not support system notifications");
     }

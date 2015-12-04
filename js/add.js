@@ -80,6 +80,7 @@ function addHabit() {
     habit.set("icon", habitIcon);
     habit.set("weeklyFreq", weeklyFreq);
     habit.set("dailyFreq", dailyFreq);
+    habit.set("dailyHabitCounter", 0);
 
     // If all the fields are filled out, save
     if(habitTitle != "" && habitIcon != null &&
@@ -109,5 +110,3 @@ function atLeastOneClicked(buttonHash) {
     });
     return clicked;
 }
-
-
