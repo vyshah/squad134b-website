@@ -19,8 +19,7 @@ Jonathan:
 Pauline:
 	Splash Index Page (CSS/HTML/JS)
 	Finished Redesigned List Page (CSS/HTML/JS)
-	Image Sprite (though implemented, unused)
-
+	Image Sprites: sprite.css, sprint.png (while implemented, we opted to use font icons instead)
 	
 
 Scott:
