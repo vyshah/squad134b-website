@@ -78,11 +78,11 @@ function editHabit() {
         habitToEdit.save(null, {
             success: function (habit) {
                 alert("Your habit has been edited!");
-                window.location = "../src/list.html";
+                window.location = "../src/newlist.html";
             },
             error: function (habit, error) {
                 alert("Something went wrong. No changes were made to your habit.");
-                window.location = "../src/list.html";
+                window.location = "../src/newlist.html";
             }
         });
     } else {
