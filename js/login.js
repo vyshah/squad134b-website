@@ -99,6 +99,9 @@ function loginClick() {
 
 }
 function waitForItLogin(){
+
+        var userEmail = document.getElementById('usermail').value;  
+        var pass = document.getElementById('password').value;
         if (isPaused) {
             //console.log("about to set Timeout")
 
@@ -110,7 +113,21 @@ function waitForItLogin(){
                 {
      
                    sessionStorage.setItem("username", document.getElementById('usermail').value);
-                   window.location = "../src/welcome.html";
+             
+                     Parse.User.logIn(userEmail, pass, {
+                         success: function(user) {
+
+                           window.location = "../src/welcome.html";
+                         },
+                        error: function(user, error) {
+                         console.log(error);
+                         console.log(user);
+                         alert("Incorrect username or password!");
+                         }
+                    });   
+
+
+                   
                 }
              }
 }
@@ -119,7 +136,7 @@ function userParseCheck(){
 
     var query = new Parse.Query(Parse.User);
     var userEmail = document.getElementById('usermail').value;  
-
+    var state;
     query.equalTo("username",userEmail)
     //console.log(query.equalTo("username",userEmail))
     query.find({
@@ -129,18 +146,22 @@ function userParseCheck(){
         if (results.length > 0) //the array is full, then username is in database
         {
             //username is in database
+             //state = 0;
              waitForItLogin();
+              //0 is good
         }
         else{
-            alert("Incorrect username or password");
+            //state = 1; //bad
+            alert("Username not found. Sign Up");
+            return 1; //bad
         }
-        return;
+        
 
         },
     error: function (results, error){
         console.log(error);
-        console.log("Incorrect username or password");
-        return;
+        console.log("Username not found. Sign Up");
+        return 1;
     }  
     });
 
@@ -280,3 +301,125 @@ function validatePassword(fld, passObj ) {
     }
    return true;
 }
+
+function loginClickWelcomeEmail() {
+ 
+    status = inputValidationWEmail(); //will wait
+    var out = 1;
+
+
+    if (status == 0)
+    {
+        //checks database for user
+        out = 0;
+        out = userParseCheck(); //will call the waitforItLogin()
+        // 0 is good
+        // 1 is bad
+    }
+
+    alert(status);
+    alert(out);
+    return out;
+
+}
+
+function inputValidationWEmail()
+{
+    var stat = 0;
+    isPaused = true;
+    errorFlag = false;
+    console.log("Inside Input inputValidationEmail")
+
+    var userEmail = document.getElementById('usermail').value;  
+    //var passObj = document.getElementById('password');
+    //var pass = document.getElementById('password').value;
+
+    IsEmpty(userEmail, 'Email');
+    //IsEmpty(pass, 'Password');
+    if(errorFoundEmpty == false) {
+       validate_email(userEmail, 'Incorrect Email Format');
+       if(errorFoundEmail == false){
+          //validatePassword(pass, passObj);
+         }
+         else //if error found
+         {
+            errorFoundEmail = false;
+            stat = 1;
+         }
+    }
+    else //errors are found (print error and then reset flags)
+    {
+        errorFoundEmpty = false;
+        errorFoundEmail = false;
+        //errorFoundPass = false;
+        stat = 1;
+        //return stat;
+    }
+   /* if (errorFoundPass == true)
+    {
+        errorFoundPass = false;
+        stat = 1;
+        //return stat;
+    }*/
+    if (errorFlag == true)
+    {
+        errorFlag = false;
+        stat = 1;
+        //return stat;
+    }
+
+    console.log("leaving inputValidationEmail")
+    isPaused = false;
+    return stat;
+}
+
+function inputValidationWPass()
+{
+    var stat = 0;
+    isPaused = true;
+    errorFlag = false;
+    console.log("Inside Input inputValidationPass")
+
+    //var userEmail = document.getElementById('usermail').value;  
+    var passObj = document.getElementById('password');
+    var pass = document.getElementById('password').value;
+
+    //IsEmpty(userEmail, 'Email');
+    IsEmpty(pass, 'Password');
+    if(errorFoundEmpty == false) {
+
+          validatePassword(pass, passObj);
+
+    }
+    else //errors are found (print error and then reset flags)
+    {
+        errorFoundEmpty = false;
+        //errorFoundEmail = false;
+        errorFoundPass = false;
+        stat = 1;
+        //return stat;
+    }
+   if (errorFoundPass == true)
+    {
+        errorFoundPass = false;
+        stat = 1;
+        //return stat;
+    }
+    if (errorFlag == true)
+    {
+        errorFlag = false;
+        stat = 1;
+        //return stat;
+    }
+
+    console.log("leaving inputValidationPass")
+    isPaused = false;
+    return stat;
+}
+
+
+
+
+
+
+
