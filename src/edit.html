@@ -44,20 +44,12 @@
 					<label> <input id="thurs" type="checkbox" name="date" value="thursday"><span>Thur</span></label>
 					<label> <input id="fri" type="checkbox" name="date" value="friday"><span>Fri</span></label>
 					<label> <input id="sat" type="checkbox" name="date" value="saturday"><span>Sat</span></label>
-				</div>
+				</div><br>
 		
 		
-				<p><label>Daily Frequency</label></p>
-				<div id="daily-button">
-					<label> <input type="checkbox" name="day" id="one" value="zero" checked><span>0</span></label>
-					<label> <input type="checkbox" name="day" id="one" value="one"><span>1</span></label>
-					<label> <input type="checkbox" name="day" id="two" value="two"><span>2</span></label>
-					<label> <input type="checkbox" name="day" id="three" value="three"><span>3</span></label>
-					<label> <input type="checkbox" name="day" id="four" value="four"><span>4</span></label>
-					<label> <input type="checkbox" name="day" id="five" value="five"><span>5</span></label>
-					<span id="times">times</span>
-				</div>
-				<p><label><span id="others_text">Others: </span><input id="others" type="text" name="day" placeholder="e.g. 6 times"></label></p>
+				<label>Daily Frequency</label>
+				<input id="daily-frequency" type="number" required>
+
 				<p id="save_p"><input id="save" type="button" value="Save It" onclick="editHabit()"></p>
 				
 			</form>
