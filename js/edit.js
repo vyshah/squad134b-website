@@ -72,6 +72,7 @@ function editHabit() {
     // If all the fields are filled out, save
     if(habitTitle != "" && iconString != null &&
         atLeastOneClicked(weeklyFreq)) {
+          mixpanel.track("Habit has been edited");
         habitToEdit.save(null, {
             success: function (habit) {
                 alert("Your habit has been edited!");
@@ -83,6 +84,7 @@ function editHabit() {
             }
         });
     } else {
+        mixpanel.track("Error when editing");
         alert("One or more fields is missing!");
     }
 }

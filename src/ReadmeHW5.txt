@@ -29,3 +29,5 @@ Vyom:
 Dan:
 	PhoneGap to Android
 	Minimizing
+	Error Monitoring with Rollbar
+	Usage monitoring/analytics with mixpanel

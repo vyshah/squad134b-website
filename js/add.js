@@ -63,6 +63,7 @@ function selectImage(name) {
 
 
 function addHabit() {
+    mixpanel.track("Habit properly saved");
     var habitTitle = document.getElementById('title').value;
     var dailyFreq = parseInt(document.getElementById('daily-frequency').value);
 

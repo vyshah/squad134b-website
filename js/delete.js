@@ -27,6 +27,7 @@ function confirmDelete(habit) {
 }
 
 function deleteHabit() {
+    mixpanel.track("Habit deleted");
     habitToDelete.destroy({
         success: function(obj) {
             alert("Your habit was successfully deleted.");
