@@ -5,9 +5,27 @@ var errorFoundPass = false;
 
 
 var isPaused = false;
+
+var wait = false;
+
 Parse.initialize("BoImLGZodfLfRb4hR2YkejAdYjtSnLriHunArwnP", "1oCKt23WJYH6jHrjtEqA8wCNRmva9Pfxuj32GLR8");
 
+function resetPassword()
+{
 
+  var userEmail = document.getElementById('usermail').value;  
+
+  Parse.User.requestPasswordReset(userEmail, {
+    success: function() {
+    alert("Password reset sent successfully to email");
+    },
+    error: function(error) {
+      // Show the error message somewhere
+      alert("Error: " + error.code + " " + error.message +" in the box above");
+    }
+  });
+
+}
 function addUser() {
     
 
@@ -316,6 +334,7 @@ function loginClickWelcomeEmail() {
         // 0 is good
         // 1 is bad
     }
+
 
     alert(status);
     alert(out);
