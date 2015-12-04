@@ -1,0 +1,136 @@
+<head>
+    <title>Virtue / Vice</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.0.19.min.js"></script>
+
+
+
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700'>
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600'>
+    <link rel="stylesheet" href ="https://s3-us-west-2.amazonaws.com/s.cdpn.io/413591/icomoon.eot">
+    <link rel="stylesheet" type="text/css" href="../css/default.css">
+    <link rel="stylesheet" type="text/css" href="../css/grid.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.0.19.min.js"></script>
+
+    <script src="../js/logout.js"></script>
+    <script src="../js/todays-habits.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Lobster|Raleway:400,200' rel='stylesheet' type='text/css'>
+</head>
+<header class="small">
+    <nav>
+        <h1 class="logo">virtue/vice</h1>
+        <a class="signin" value="logout" onclick="logoutClick()">logout</a>
+    </nav>
+</header>
+<div class="container"><span></span><p></p>
+
+    <div class="grid_12" style="padding-top:50px;">
+        <div class="inner_container">
+            <!- Modal-------------------------------------------!>
+            <div id="successModal" class="modalbg" hidden="visible">
+                <div class="dialog">
+                    <a href="#close" title="Close" class="close"><center><p class="entypo-cancel-circled"></p></center></a>
+                    <center><h2>Congratulations!</h2>
+                        Great job on completing this habit.<P></P></center>
+                    <center><button type="button" class="op op-done" onclick="clickCounter();" title="done">
+                        <a href="#close"><img src="../img/done.svg" alt="Done"></a>
+                    </button></center>
+                    </button>
+                </div>
+            </div>
+
+            <!- TEMPLATE -------------------------------------------!>
+            <section>
+                <div id="habits">
+                    <div class="habits-container template">
+                        <div class="col_1of3">
+                            <div class="post">
+                                <img class="habit-icon" alt="habit icon">
+
+                                <div class="details">
+                                    <div class="actions">
+                                        <a href="#" class="btn btn-round op-done">
+                                            <span class="icon-checkmark" onclick="location.href='#successModal'"></span>
+                                        </a>
+                                        <a href="#" class="btn btn-round op-edit">
+                                            <span class="icon-pencil" onclick="location.href='edit.html'"></span>
+                                        </a>
+                                        <a href="#" class="btn btn-round op-del" onclick="location.href='delete.html'">
+                                            <span class="icon-bin"></span>
+                                        </a>
+                                    </div>
+                                    <span class="habit-name"><h2>template</h2></span>
+                                    <p>You have done this twice today!</p>
+                                    <p class="styled">
+                                        <meter min="0" max="100" low="25" high="75" optimum="100" value="80"></meter></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <button type="button" id="allHabits" onclick="location.href='todays-habits.html'" title="add habit"><center><span class="all-habits">All Habits</span></center>
+            </button>
+
+            <button type="button" id="addHabit" onclick="addHabitClick()" title="add habit"><center><span class="icon-plus"></span></center>
+            </button>
+
+            <script type="text/javascript">
+
+                var ops = {
+                    body: "You have been inactive for an hour. Have you completed a habit recently?",
+                    icon: '../hourglass-icon.png',
+                }
+
+                //ay mang ya shit's broke quit usin IE
+                if (!("Notification" in window)) {
+                    alert("This browser does not support system notifications");
+                }
+
+                else if (Notification.permission === "granted") {
+                    // If it's okay let's create a notification for timer
+                    var timer;
+                    var timeLimit = 1000 * 60 * 60;
+
+                    //call this function if the timer runs out
+                    var timeout = function () {
+                        var notification = new Notification("virtue/vice", ops);
+                    }
+
+                    //reset timer onclick
+                    timer = setTimeout(timeout, timeLimit);
+                    document.onclick = function() {
+                        clearTimeout(timer);
+                        timer = setTimeout(timeout, timeLimit);
+                    };
+                }
+
+                // Otherwise, we need to ask the user for permission
+                else {
+                    Notification.requestPermission(function (permission) {
+                        // If the user accepts, let's create a notification
+                        if (permission === "granted") {
+                            var timer;
+                            var timeLimit = 5000;
+
+                            var timeout = function () {
+                                var notification = new Notification("virtue/vice", ops);
+                            }
+
+                            timer = setTimeout(timeout, timeLimit);
+                            document.onclick = function() {
+                                clearTimeout(timer);
+                                timer = setTimeout(timeout, timeLimit);
+                            };
+                        }
+                    });
+                }
+            </script>
+            </body>
+            </html>
