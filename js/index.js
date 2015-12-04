@@ -5,7 +5,13 @@
 //sessionStorage.setItem('username', username);
 
 
-
+ $(document).on("scroll", function () {
+  if ($(document).scrollTop() > 100) {
+    $("header").addClass("small");
+  } else {
+    $("header").removeClass("small");
+  }
+});
 $(document).ready(function(){
 
     $(document).scrollTop() =0;
@@ -35,12 +41,6 @@ $(document).ready(function(){
   }
 });
 
- $(document).on("scroll", function () {
-  if ($(document).scrollTop() > 100) {
-    $("header").addClass("small");
-  } else {
-    $("header").removeClass("small");
-  }
-});
+
 
 });
