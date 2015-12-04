@@ -1,0 +1,22 @@
+.Screen-Shot 2015-12-04 at 10.25.25 AM, .Screen-Shot 2015-12-04 at 10.26.11 AM, .Screen-Shot 2015-12-04 at 10.26.26 AM{
+	background: url(sprites.png) no-repeat;
+}
+
+.Screen-Shot 2015-12-04 at 10.25.25 AM{
+	background-position: -1px 0;
+	width: 124px;
+	height: 108px;
+}
+
+.Screen-Shot 2015-12-04 at 10.26.11 AM{
+	background-position: -127px 0;
+	width: 124px;
+	height: 124px;
+}
+
+.Screen-Shot 2015-12-04 at 10.26.26 AM{
+	background-position: -255px 0;
+	width: 130px;
+	height: 126px;
+}
+
