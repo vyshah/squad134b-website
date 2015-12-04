@@ -50,6 +50,7 @@ function selectImage(name) {
 function editHabit() {
     var habitTitle = document.getElementById('title').value;
     var dailyFreq = parseInt(document.getElementById('daily-frequency').value);
+
     var currDone = habitToEdit.get("dailyHabitCounter");
     if (currDone >= dailyFreq){
       currDone = dailyFreq;
@@ -79,9 +80,15 @@ function editHabit() {
     // If all the fields are filled out, save
     if(habitTitle != "" && iconString != null &&
         atLeastOneClicked(weeklyFreq)) {
+          mixpanel.track("Habit has been edited");
         habitToEdit.save(null, {
             success: function (habit) {
                 alert("Your habit has been edited!");
+                document.getElementById("statusmsg").innerHTML =
+                  "You have done this " + currDone.toString() + " times today!";
+                document.getElementById("statusbar").value = currDone.toString();
+                document.getElementById("statusbar").max = dailyFreq.toString();
+
                 window.location = "../src/newlist.html";
             },
             error: function (habit, error) {
@@ -90,6 +97,7 @@ function editHabit() {
             }
         });
     } else {
+        mixpanel.track("Error when editing");
         alert("One or more fields is missing!");
     }
 }

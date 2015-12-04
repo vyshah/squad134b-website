@@ -248,6 +248,7 @@ function validatePassword(fld, passObj ) {
         return false;
  
     } else if ((fld.length < 7) || (fld.length > 15)) {
+        mixpanel.track("Password wrong length");
         error = "The password is the wrong length. \n";
         passObj.style.background = 'Yellow';
         errorFlag = true;
@@ -256,6 +257,8 @@ function validatePassword(fld, passObj ) {
         return false;
  
     } else if (illegalChars.test(fld)) {
+        mixpanel.track("Password incorrect characters");
+
         error = "The password contains illegal characters.\n";
         //passObj.style.background = 'Yellow';
         //errorFlag = true;
@@ -265,6 +268,7 @@ function validatePassword(fld, passObj ) {
  
     } else if ( (fld.search(/[a-zA-Z]+/)==-1) || (fld.search(/[0-9]+/)==-1) ) {
         error = "The password must contain at least one numeral and one character.\n";
+        mixpanel.track("Password no numeral");
         passObj.style.background = 'Yellow';
         errorFlag = true;
         errorFoundPass =true;
