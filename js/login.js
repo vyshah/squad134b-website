@@ -129,7 +129,7 @@ function userParseCheck(){
         if (results.length > 0) //the array is full, then username is in database
         {
             //username is in database
-             //waitForItLogin();
+            waitForItLogin();
         }
         else{
             alert("Incorrect username or password");
