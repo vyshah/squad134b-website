@@ -4,7 +4,10 @@
 //console.log(username);
 //sessionStorage.setItem('username', username);
 
- $(document).on("scroll", function () {
+Parse.initialize("BoImLGZodfLfRb4hR2YkejAdYjtSnLriHunArwnP", "1oCKt23WJYH6jHrjtEqA8wCNRmva9Pfxuj32GLR8");
+
+
+$(document).on("scroll", function () {
   if ($(document).scrollTop() > 100) {
     $("header").addClass("small");
   } else {
@@ -13,6 +16,7 @@
 });
 
 $(document).ready(function(){
+
  $('.focus').focus();
  $(document).keypress(function(e) {
   if(e.which == 13) {
@@ -33,12 +37,24 @@ $(document).ready(function(){
       pass.removeClass('visible').fadeOut(function(){
         user.addClass('visible').fadeIn(onClickSignup());
       });
-                window.location = "newlist.html";
-      
+  
+        var userEmail = document.getElementById('usermail').value;  
+        var pass = document.getElementById('password').value;
+        Parse.User.logIn(userEmail, pass, {
+           success: function(user) {
+
+             window.location = "newlist.html";
+           },
+          error: function(user, error) {
+           console.log(error);
+           console.log(user);
+           alert("Incorrect username or password!");
+           window.location = "index.html";
+
+           }
+      });    
     }
   }
 });
-
-
 
 });

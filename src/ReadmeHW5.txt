@@ -2,6 +2,8 @@ ReadMe
 
 Team Squad
 
+HABIT APPLICATION
+
 Pauline Nguyen
 Jonathan Cervantes
 Scott Tang
@@ -11,9 +13,17 @@ Dan Liu
 
 Homework 5
 
+Note:
+ Notifications do not work on Internet Explorer
+
+
 Tasks:
 
 Jonathan:
+	Login Username Authentication Parse
+	Login Password Authenticaion Javascript and Parse
+	Authentication works on Both Signup page and index.html
+	Fixed bugs on Signup and Login
 
 
 Pauline:
