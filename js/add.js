@@ -58,6 +58,7 @@ function selectImage(name) {
     document.getElementById('icon9').style.border = "none";
     var image = document.getElementById(name);
     image.style.border = "5px solid #42A5F5";
+    iconString=name;
     habitIcon = name;
 }
 
