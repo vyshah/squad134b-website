@@ -40,7 +40,12 @@ Vyom:
 	
 
 Dan:
-	PhoneGap to Android
+	Android app and Windows 10 app
+		note: iOS app unable to build because no iPhones or Mac users available in team.
 	Minification
 	Error Monitoring with Rollbar
 	Usage monitoring/analytics with mixpanel
+		The analytics implemented track various events such as if the user had incorrectly typed in a password,
+		how they incorrectly inputted it, if a habit was edited, added, when someone added an account, etc.
+		This data is all outputted into Mixpanel, giving a detailed view of everything going on.
+		
