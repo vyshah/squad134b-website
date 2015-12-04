@@ -30,11 +30,11 @@ function deleteHabit() {
     habitToDelete.destroy({
         success: function(obj) {
             alert("Your habit was successfully deleted.");
-            window.location = "../src/list.html";
+            window.location = "../src/newlist.html";
         },
         error: function(obj) {
             alert("An error occurred. Your habit was not deleted.");
-            window.location = "../src/list.html";
+            window.location = "../src/newlist.html";
         }
     })
 }
