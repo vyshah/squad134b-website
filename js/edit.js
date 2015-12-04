@@ -42,6 +42,9 @@ function selectImage(name) {
 
 function editHabit() {
     var habitTitle = document.getElementById('title').value;
+    var dailyFreq = parseInt(document.getElementById('daily-frequency').value);
+
+    // Set weekly frequency
     var weeklyFreq = {
         "sun": false,
         "mon": false,
@@ -51,20 +54,8 @@ function editHabit() {
         "fri": false,
         "sat": false
     };
-    var dailyFreq = {
-        "one": false,
-        "two": false,
-        "three": false
-    };
-
-    // Set weekly frequency
     Object.keys(weeklyFreq).forEach(function(key) {
         weeklyFreq[key] = document.getElementById(key).checked;
-    });
-
-    // Set daily frequency
-    Object.keys(dailyFreq).forEach(function(key) {
-        dailyFreq[key] = document.getElementById(key).checked;
     });
 
     habitToEdit.set("title", habitTitle);
@@ -74,7 +65,7 @@ function editHabit() {
 
     // If all the fields are filled out, save
     if(habitTitle != "" && iconString != null &&
-        atLeastOneClicked(weeklyFreq) && atLeastOneClicked(dailyFreq)) {
+        atLeastOneClicked(weeklyFreq)) {
         habitToEdit.save(null, {
             success: function (habit) {
                 alert("Your habit has been edited!");

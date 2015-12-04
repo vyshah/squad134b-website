@@ -57,6 +57,9 @@ function selectImage(name) {
 
 function addHabit() {
     var habitTitle = document.getElementById('title').value;
+    var dailyFreq = parseInt(document.getElementById('daily-frequency').value);
+
+    // Set weekly frequency
     var weeklyFreq = {
         "sun": false,
         "mon": false,
@@ -66,23 +69,8 @@ function addHabit() {
         "fri": false,
         "sat": false
     };
-    var dailyFreq = {
-        "zero": false,
-        "one": false,
-        "two": false,
-        "three": false,
-        "four": false,
-        "five": false
-    };
-
-    // Set weekly frequency
     Object.keys(weeklyFreq).forEach(function(key) {
         weeklyFreq[key] = document.getElementById(key).checked;
-    });
-
-    // Set daily frequency
-    Object.keys(dailyFreq).forEach(function(key) {
-       dailyFreq[key] = document.getElementById(key).checked;
     });
 
     var Habit = new Parse.Object.extend("Habit");
@@ -95,7 +83,7 @@ function addHabit() {
 
     // If all the fields are filled out, save
     if(habitTitle != "" && habitIcon != null &&
-       atLeastOneClicked(weeklyFreq) && atLeastOneClicked(dailyFreq)) {
+       atLeastOneClicked(weeklyFreq)) {
         habit.save(null, {
             success: function (habit) {
                 alert("Your habit has been saved!");
@@ -103,7 +91,8 @@ function addHabit() {
             },
             error: function (habit, error) {
                 alert("Something went wrong. Your habit was not saved.");
-                window.location = "../src/newlist.html";
+                console.log(error);
+                //window.location = "../src/newlist.html";
             }
         });
     } else {

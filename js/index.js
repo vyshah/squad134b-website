@@ -1,3 +1,9 @@
+//Parse.initialize("BoImLGZodfLfRb4hR2YkejAdYjtSnLriHunArwnP", "1oCKt23WJYH6jHrjtEqA8wCNRmva9Pfxuj32GLR8");
+//var username =
+//
+//console.log(username);
+//sessionStorage.setItem('username', username);
+
 $(document).on("scroll", function () {
 	if ($(document).scrollTop() > 100) {
 		$("header").addClass("small");
@@ -11,6 +17,7 @@ $(document).ready(function(){
  $('.focus').focus();
  $(document).keypress(function(e) {
   if(e.which == 13) {
+    sessionStorage.setItem('username', document.getElementById('usermail').value)
     var user = $('.user');
     var pass = $('.pass');
     $('.focus').focus();
