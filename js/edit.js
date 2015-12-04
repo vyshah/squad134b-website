@@ -35,10 +35,17 @@ function selectImage(name) {
     document.getElementById('icon1').style.border = "none";
     document.getElementById('icon2').style.border = "none";
     document.getElementById('icon3').style.border = "none";
+    document.getElementById('icon4').style.border = "none";
+    document.getElementById('icon5').style.border = "none";
+    document.getElementById('icon6').style.border = "none";
+    document.getElementById('icon7').style.border = "none";
+    document.getElementById('icon8').style.border = "none";
+    document.getElementById('icon9').style.border = "none";
     var image = document.getElementById(name);
     image.style.border = "5px solid #42A5F5";
-    iconString = name;
+    habitIcon = name;
 }
+
 
 function editHabit() {
     var habitTitle = document.getElementById('title').value;
