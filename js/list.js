@@ -10,6 +10,7 @@ var habitIconPathHash = {
 var results = getHabits();
 
 function addHabitClick() {
+     mixpanel.track("Add button pressed");
     location.href="add.html?username=" + username;
 }
 

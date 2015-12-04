@@ -17,6 +17,9 @@ Jonathan:
 
 
 Pauline:
+	Splash Index FrontPage (CSS/HTML/JS)
+	Finished Redesigned List Page (CSS/HTML/JS)
+	Image Sprites: sprite.css, sprint.png (while implemented, we opted to use font icons instead)
 	
 
 Scott:
@@ -29,3 +32,5 @@ Vyom:
 Dan:
 	PhoneGap to Android
 	Minimizing
+	Error Monitoring with Rollbar
+	Usage monitoring/analytics with mixpanel
