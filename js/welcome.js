@@ -1,3 +1,1 @@
-function addHabitClick() {
-    location.href="add.html?";
-}
+function addHabitClick(){location.href="add.html?"}
