@@ -20,6 +20,8 @@ Pauline:
 	
 
 Scott:
+	Fixed bugs with Login and CRUD
+	Added functionality for 'all habits' and 'todays habits'
 	
 Vyom:
 	
