@@ -96,11 +96,11 @@ function addHabit() {
         habit.save(null, {
             success: function (habit) {
                 alert("Your habit has been saved!");
-                window.location = "../src/list.html";
+                window.location = "../src/newlist.html";
             },
             error: function (habit, error) {
                 alert("Something went wrong. Your habit was not saved.");
-                window.location = "../src/list.html";
+                window.location = "../src/newlist.html";
             }
         });
     } else {
