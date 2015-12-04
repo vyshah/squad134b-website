@@ -24,6 +24,8 @@ Jonathan:
 	Login Password Authenticaion Javascript and Parse
 	Authentication works on Both Signup page and index.html
 	Fixed bugs on Signup and Login
+	Updated Daily frequency button to counter
+	Implemented Reset Password
 
 
 Pauline:
