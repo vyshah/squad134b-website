@@ -67,9 +67,12 @@ function addHabit() {
         "sat": false
     };
     var dailyFreq = {
+        "zero": false,
         "one": false,
         "two": false,
-        "three": false
+        "three": false,
+        "four": false,
+        "five": false
     };
 
     // Set weekly frequency
