@@ -36,7 +36,7 @@ function displayHabits(results) {
         var objectId = object.id;
 
         document.getElementsByClassName("habit-name")[0].innerHTML = habitTitle;
-        $(document.getElementsByClassName("op op-done")[0]).attr("onclick", "checkClicked(object)");
+        $(document.getElementsByClassName("opdone")[0]).attr("onclick", "checkClicked(object)");
         $(document.getElementsByClassName("habit-icon")[0]).attr("src", habitIconPathHash[iconString]);
         $(document.getElementsByClassName("op op-edit")[0]).attr("onclick", "location.href=\"edit.html?" + objectId + "\"");
         $(document.getElementsByClassName("op op-del")[0]).attr("onclick", "location.href=\"delete.html?" + objectId + "\"");
@@ -55,6 +55,9 @@ function displayHabits(results) {
 
     done = done + 1;
     habit.set('dailyHabitCounter', done);
+    document.getElementById("statusmsg").innerHTML =
+      "You have done this " + currDone.toString() + " times today!";
+    document.getElementById("statusbar").value = currDone.toString();
 
     if (done >= limit){
       location.href=#successModal2;
@@ -62,7 +65,6 @@ function displayHabits(results) {
     else {
       location.href=#successModal;
     }
-
 
   }
 }

@@ -44,6 +44,17 @@
         </div>
       </div>
 
+      <div id="successModal" class="modalbg" hidden="visible">
+        <div class="dialog">
+          <a href="#close" title="Close" class="close"><center><p class="entypo-cancel-circled"></p></center></a>
+          <center><h2>Congratulations!</h2>
+            You've reached your daily goal for this habit!<P></P></center>
+            <center><button type="button" class="op op-done" onclick="clickCounter();" title="done">
+              <a href="#close"><img src="../img/done.svg" alt="Done"></a>
+            </button></center>
+          </button>
+        </div>
+      </div>
       <!- TEMPLATE -------------------------------------------!>
       <section>
         <div id="habits">
@@ -56,18 +67,18 @@
                   <div class="actions">
                     <a href="#" class="btn btn-round op-done">
                       <span class="icon-checkmark" onclick="location.href='#successModal'"></span>
-                    </a> 
+                    </a>
                     <a href="#" class="btn btn-round op-edit">
                       <span class="icon-pencil" onclick="location.href='edit.html'"></span>
-                    </a>   
+                    </a>
                     <a href="#" class="btn btn-round op-del" onclick="location.href='delete.html'">
                       <span class="icon-bin"></span>
-                    </a>   
+                    </a>
                   </div>
                   <span class="habit-name"><h2>template</h2></span>
-                  <p>You have done this twice today!</p>
+                  <p id="statusmsg">You have done this 0 times today!</p>
                   <p class="styled">
-                    <meter min="0" max="100" low="25" high="75" optimum="100" value="80"></meter></p>
+                    <meter id = "statusbar" min="0" max="100" value="80"></meter></p>
                   </div>
                 </div>
               </div>
@@ -88,7 +99,7 @@
             icon: '../hourglass-icon.png',
           }
 
-    //ay mang ya shit's broke quit usin IE 
+    //ay mang ya shit's broke quit usin IE
     if (!("Notification" in window)) {
       alert("This browser does not support system notifications");
     }

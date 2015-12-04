@@ -43,6 +43,7 @@ function selectImage(name) {
 function editHabit() {
     var habitTitle = document.getElementById('title').value;
     var dailyFreq = parseInt(document.getElementById('daily-frequency').value);
+
     var currDone = habitToEdit.get("dailyHabitCounter");
     if (currDone >= dailyFreq){
       currDone = dailyFreq;
@@ -75,6 +76,11 @@ function editHabit() {
         habitToEdit.save(null, {
             success: function (habit) {
                 alert("Your habit has been edited!");
+                document.getElementById("statusmsg").innerHTML =
+                  "You have done this " + currDone.toString() + " times today!";
+                document.getElementById("statusbar").value = currDone.toString();
+                document.getElementById("statusbar").max = dailyFreq.toString();
+
                 window.location = "../src/newlist.html";
             },
             error: function (habit, error) {
