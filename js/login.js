@@ -4,7 +4,10 @@ var errorFoundEmail = false;
 var errorFoundPass = false;
 
 
+var isPaused = false;
+
 function addUser() {
+    
 
     if (errorFoundPass == true || errorFoundEmail == true || errorFoundEmpty == true){
         return false;
@@ -22,18 +25,30 @@ function addUser() {
     //var Users = Parse.Object.extend("Users");
    // var users = new Users();
 
-   //user.set("phone", "415-392-0202");
-
-    user.signUp(null, {
+   //user.set("phone", "415-392-0202");   
+    user.signUp( null, {
          success: function(user) {
             // Hooray! Let them use the app now.
             alert('SignUp was sucessful');
+            //return emailInParse;
+           
+            if (errorFlag == false)
+            {   var signUpText = document.getElementById("signInMessage");
+                signUpText.innerHTML = "Sign Up Successful! Login "
+                signUpText.style.display = "block";
+            }
+            
             },
         error: function(user, error) {
             // Show the error message somewhere and let the user try again.
             //alert("Error: " + error.code + " " + error.message);
             errorFlag = true;
-            alert("The email has already been taken by another user. Please try a different one.");
+            emailInParseE = true;
+            alert("The email is already associated with an account. Please try a different one or Login.");
+            //return emailInParse;
+            var signUpText = document.getElementById("signInMessage")
+            signUpText.innerHTML = "Email already taken. Try a different one or Login ";
+            signUpText.style.display = "block";
             }
         });
 
@@ -41,25 +56,40 @@ function addUser() {
 
 function onClickSignUp() {
 
-   inputValidation();
+   var status = inputValidation(); //0 means all good, 1 means validation error
    //if no errors left, add user to database
-     addUser();
-    
+   //console.log(isPaused);
+   if  (status == 0) ///
+    {
+        waitForIt();
 
-   if (errorFlag == false)
-   { 
-		var signUpText = document.getElementById("signInMessage");
-		signUpText.style.display = "block";
-   }
+    }    
+
    
-}
+};
+function waitForIt(){
+        if (isPaused) {
+            console.log("about to set Timeout")
 
+            setTimeout(function(){waitForIt()},1000);
+        } else {
+
+               console.log("before error flag after inputValidation")
+
+                if (errorFlag == false)
+                {
+
+                    addUser();
+                }
+        }
+}
 function loginClick() {
 
 	inputValidation();
 
 	if(errorFlag == false)
 	{
+     
         sessionStorage.setItem("username", document.getElementById('usermail').value);
 		window.location = "../src/welcome.html";
 	}
@@ -67,7 +97,10 @@ function loginClick() {
 
 function inputValidation()
 {	
+    var stat = 0;
+    isPaused = true;
 	errorFlag = false;
+    console.log("Inside Input inputValidation")
 
 	var userEmail = document.getElementById('usermail').value;	
 	var passObj = document.getElementById('password');
@@ -80,7 +113,37 @@ function inputValidation()
        if(errorFoundEmail == false){
 	      validatePassword(pass, passObj);
          }
+         else //if error found
+         {
+            errorFoundEmail = false;
+            stat = 1;
+         }
     }
+    else //errors are found (print error and then reset flags)
+    {
+        errorFoundEmpty = false;
+        errorFoundEmail = false;
+        errorFoundPass = false;
+        stat = 1;
+        //return stat;
+    }
+    if (errorFoundPass == true)
+    {
+        errorFoundPass = false;
+        stat = 1;
+        //return stat;
+    }
+    if (errorFlag == true)
+    {
+        errorFlag = false;
+        stat = 1;
+        //return stat;
+    }
+
+    console.log("leaving inputValidation")
+    isPaused = false;
+    return stat;
+    
 }
 
 
