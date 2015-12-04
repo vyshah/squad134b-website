@@ -36,12 +36,13 @@ function displayHabits(results) {
         var objectId = object.id;
 
         document.getElementsByClassName("habit-name")[0].innerHTML = habitTitle;
-        $(document.getElementsByClassName("op-done")[0]).attr("onclick", "location.href=#successModal'");
+        $(document.getElementsByClassName("btn btn-round op-done")[0]).attr("onclick", "location.href=#successModal'");
         $(document.getElementsByClassName("habit-icon")[0]).attr("src", habitIconPathHash[iconString]);
         $(document.getElementsByClassName("op-edit")[0]).attr("onclick", "location.href=\"edit.html?" + objectId + "\"");
         $(document.getElementsByClassName("op-del")[0]).attr("onclick", "location.href=\"delete.html?" + objectId + "\"");
 
-        var clonedHabitContainer = $("col_1of3.template").clone().removeClass("template");
-        clonedHabitContainer.appendTo("#inner_container");
+        var clonedHabitContainer = $(".habits-container.template").clone().removeClass("template");
+        clonedHabitContainer.appendTo( "#habits" );
+
     }
 }
