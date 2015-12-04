@@ -2480,4 +2480,42 @@ meter {
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
+.habit-container.template {
+  display: none;
+}
 
+.alert {
+  background: #FCF8E3;
+  padding: 15px 0 15px 15px;
+  margin-bottom: 10px;
+  font-size: 0.8125em;
+  color: #888;
+  border-radius: 3px;
+  position: relative;
+}
+.alert .icon-checkmark, .alert .icon-exclamation {
+  display: inline-block;
+  margin-right: 10px;
+}
+.alert .close {
+  background: rgba(0, 0, 0, 0.1);
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
+  padding: 10px 30px;
+}
+.alert .close [class*="icon-"] {
+  font-size: 1.875em;
+  color: #fff;
+}
+.alert.alert-success {
+  background: #a1d36e;
+  color: #fff;
+}
+.alert.alert-info {
+  background: #6ad1dd;
+  color: #fff;
+}

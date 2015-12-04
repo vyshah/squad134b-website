@@ -4,7 +4,6 @@
 //console.log(username);
 //sessionStorage.setItem('username', username);
 
-
  $(document).on("scroll", function () {
   if ($(document).scrollTop() > 100) {
     $("header").addClass("small");
@@ -12,9 +11,8 @@
     $("header").removeClass("small");
   }
 });
-$(document).ready(function(){
 
-    $(document).scrollTop() =0;
+$(document).ready(function(){
  $('.focus').focus();
  $(document).keypress(function(e) {
   if(e.which == 13) {
