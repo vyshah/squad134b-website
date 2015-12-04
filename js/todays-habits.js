@@ -4,7 +4,13 @@ var username = sessionStorage.getItem("username");
 var habitIconPathHash = {
     'icon1': '../img/sleep.jpg',
     'icon2': '../img/salad.jpg',
-    'icon3': '../img/run.jpg'
+    'icon3': '../img/run.jpg',
+    'icon4': '../img/gym.jpg',
+    'icon5': '../img/study.jpg',
+    'icon6': '../img/smoke.jpg',
+    'icon7': '../img/7.jpg',
+    'icon8': '../img/8.jpg',
+    'icon9': '../img/9.jpg'
 };
 
 var results = getHabits();
