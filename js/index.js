@@ -4,16 +4,11 @@
 //console.log(username);
 //sessionStorage.setItem('username', username);
 
-$(document).on("scroll", function () {
-	if ($(document).scrollTop() > 100) {
-		$("header").addClass("small");
-	} else {
-		$("header").removeClass("small");
-	}
-});
+
 
 $(document).ready(function(){
 
+    $(document).scrollTop() =0;
  $('.focus').focus();
  $(document).keypress(function(e) {
   if(e.which == 13) {
@@ -37,6 +32,14 @@ $(document).ready(function(){
                 window.location = "newlist.html";
       
     }
+  }
+});
+
+ $(document).on("scroll", function () {
+  if ($(document).scrollTop() > 100) {
+    $("header").addClass("small");
+  } else {
+    $("header").removeClass("small");
   }
 });
 
