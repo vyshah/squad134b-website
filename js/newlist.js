@@ -42,7 +42,7 @@ function displayHabits(results) {
         var objectId = object.id;
 
         document.getElementsByClassName("habit-name")[0].innerHTML = habitTitle;
-        $(document.getElementsByClassName("op op-done")[0]).attr("onclick", "location.href=#successModal'");
+        $(document.getElementsByClassName("op-done")[0]).attr("onclick", "clickCounter()");
         $(document.getElementsByClassName("habit-icon")[0]).attr("src", habitIconPathHash[iconString]);
         $(document.getElementsByClassName("op-edit")[0]).attr("onclick", "location.href=\"edit.html?" + objectId + "\"");
         $(document.getElementsByClassName("op-del")[0]).attr("onclick", "location.href=\"delete.html?" + objectId + "\"");
@@ -52,3 +52,41 @@ function displayHabits(results) {
 
     }
 }
+
+function checkClicked(habit){
+    var limit = habit.get('dailyFreq');
+    var done = habit.get('dailyHabitCounter');
+
+     if (done >= limit){
+       return;
+    }
+
+    done = done + 1;
+     habit.set('dailyHabitCounter', done);
+    document.getElementById("statusmsg").innerHTML =
+       "You have done this " + currDone.toString() + " times today!";
+     document.getElementById("statusbar").value = currDone.toString();
+
+    if (done >= limit){
+           document.getElementById("statusmsg").innerHTML =
+       "You are done";
+     }
+    else {
+                 document.getElementById("statusmsg").innerHTML =
+       "You are done";
+    }
+
+  }
+        function clickCounter() {
+            if(typeof(Storage) !== "undefined") {
+                if (localStorage.clickcount) {
+                    localStorage.clickcount = Number(localStorage.clickcount)+1;
+                } else {
+                    localStorage.clickcount = 1;
+                }
+                document.getElementById("statusmsg").innerHTML = "Completed <b>" + localStorage.clickcount + "/1</b> for today!";
+            } else {
+                document.getElementById("statusmsg").innerHTML = "Sorry, your browser does not support web storage...";
+            }
+        }
+
