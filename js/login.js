@@ -5,6 +5,8 @@ var errorFoundPass = false;
 
 
 var isPaused = false;
+Parse.initialize("BoImLGZodfLfRb4hR2YkejAdYjtSnLriHunArwnP", "1oCKt23WJYH6jHrjtEqA8wCNRmva9Pfxuj32GLR8");
+
 
 function addUser() {
     
@@ -15,7 +17,6 @@ function addUser() {
     var userEmail = document.getElementById('usermail').value;  
     var pass = document.getElementById('password').value;
 
-    Parse.initialize("BoImLGZodfLfRb4hR2YkejAdYjtSnLriHunArwnP", "1oCKt23WJYH6jHrjtEqA8wCNRmva9Pfxuj32GLR8");
     
     var user = new Parse.User();
     user.set("username", userEmail);
@@ -61,15 +62,15 @@ function onClickSignUp() {
    //console.log(isPaused);
    if  (status == 0) ///
     {
-        waitForIt();
+        waitForItSign();
 
     }    
 
    
 };
-function waitForIt(){
+function waitForItSign(){
         if (isPaused) {
-            console.log("about to set Timeout")
+            //console.log("about to set Timeout")
 
             setTimeout(function(){waitForIt()},1000);
         } else {
@@ -84,15 +85,66 @@ function waitForIt(){
         }
 }
 function loginClick() {
+ 
+	var status = inputValidation(); //will wait
+    
 
-	inputValidation();
 
-	if(errorFlag == false)
-	{
+    if (status == 0)
+    {
+        //checks database for user
+        userParseCheck(); //will call the waitforItLogin()
+       
+    }
+
+}
+function waitForItLogin(){
+        if (isPaused) {
+            //console.log("about to set Timeout")
+
+            setTimeout(function(){waitForIt()},800);
+        } else {
+
+               console.log("before error flag after inputValidation")
+                if(errorFlag == false)
+                {
      
-        sessionStorage.setItem("username", document.getElementById('usermail').value);
-		window.location = "../src/welcome.html";
-	}
+                   sessionStorage.setItem("username", document.getElementById('usermail').value);
+                   window.location = "../src/welcome.html";
+                }
+             }
+}
+
+function userParseCheck(){
+
+    var query = new Parse.Query(Parse.User);
+    var userEmail = document.getElementById('usermail').value;  
+
+    query.equalTo("username",userEmail)
+    //console.log(query.equalTo("username",userEmail))
+    query.find({
+    success: function(results) {
+        console.log("speace");
+        console.log(results);
+        if (results.length > 0) //the array is full, then username is in database
+        {
+            //username is in database
+             //waitForItLogin();
+        }
+        else{
+            alert("Incorrect username or password");
+        }
+        return;
+
+        },
+    error: function (results, error){
+        console.log(error);
+        console.log("Incorrect username or password");
+        return;
+    }  
+    });
+
+
 }
 
 function inputValidation()
@@ -212,7 +264,7 @@ function validatePassword(fld, passObj ) {
         //return false;
  
     } else if ( (fld.search(/[a-zA-Z]+/)==-1) || (fld.search(/[0-9]+/)==-1) ) {
-        error = "The password must contain at least one numeral.\n";
+        error = "The password must contain at least one numeral and one character.\n";
         passObj.style.background = 'Yellow';
         errorFlag = true;
         errorFoundPass =true;
