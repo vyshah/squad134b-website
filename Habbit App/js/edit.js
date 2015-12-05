@@ -75,7 +75,7 @@ function editHabit() {
     habitToEdit.set("weeklyFreq", weeklyFreq);
     habitToEdit.set("dailyFreq", dailyFreq);
     habitToEdit.set("dailyHabitCounter", currDone);
-
+    //alert(currDone);
 
     // If all the fields are filled out, save
     if(habitTitle != "" && iconString != null &&
@@ -84,10 +84,11 @@ function editHabit() {
         habitToEdit.save(null, {
             success: function (habit) {
                 alert("Your habit has been edited!");
-                document.getElementById("statusmsg").innerHTML =
-                  "You have done this " + currDone.toString() + " times today!";
-                document.getElementById("statusbar").value = currDone.toString();
-                document.getElementById("statusbar").max = dailyFreq.toString();
+               // alert(currDone.toString());
+                //document.getElementById("statusmsg").innerHTML =
+                //  "You have done this " + currDone.toString() + " times today!";
+               // document.getElementById("statusbar").value = currDone.toString();
+               // document.getElementById("statusbar").max = dailyFreq.toString();
 
                 window.location = "../src/newlist.html";
             },
