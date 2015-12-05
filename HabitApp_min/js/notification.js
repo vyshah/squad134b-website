@@ -1,1 +1,0 @@
-function showNotification(){var i,o=5e3;$(window).blur(function(t){i=setTimeout(timeout,o)}),$(window).focus(function(i){alert("Hi!")})}

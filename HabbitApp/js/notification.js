@@ -1,11 +1,1 @@
-function showNotification() {
-    var timer;
-    var timeLimit = 1000 * 5;
-    $(window).blur(function(e) {
-        timer = setTimeout(timeout, timeLimit);
-    });
-    
-    $(window).focus(function(e) {
-        alert('Hi!')
-     });
-}
+function showNotification(){var i,o=5e3;$(window).blur(function(t){i=setTimeout(timeout,o)}),$(window).focus(function(i){alert("Hi!")})}
